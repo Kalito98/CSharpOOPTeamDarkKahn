@@ -1,7 +1,7 @@
 # CSharpOOPTeamDarkKahn
 #Team name:
 #“Dark Khan”
-#List of team members:
+##List of team members:
 #boytcho.teofilov - Бойчо Теофилов
 #NMilcheva - Нина Милчева-Михайлова
 #roksana.peycheva.5 - Роксана Пейчева

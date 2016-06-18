@@ -30,13 +30,36 @@ namespace ConsoleApplication2
             }
         }
 
+        public string Phone
+        {
+            get
+            {
+                return this.phone;
+            }
+            private set
+            {
+                this.phone = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return this.email;
+            }
+            private set
+            {
+                this.email = value;
+            }
+        }
+
         Doctor(string name, string phone, string email)
         {
             this.doctorPatients = new List<Patient>();
             this.name = name;
             this.phone = phone;
             this.numPatients = defaultPatients;
-
             this.email = email;       
         }
 
@@ -61,15 +84,6 @@ namespace ConsoleApplication2
                     return false;
                 }
             }
-            //try
-            //{
-            //    var addr = new System.Net.Mail.MailAddress(email);
-            //    return addr.Address == email;
-            //}
-            //catch
-            //{
-            //    return false;
-            //}
             Regex rgxEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                                @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
                                @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
@@ -94,7 +108,7 @@ namespace ConsoleApplication2
 
         public void addNewPatient(Patient newPatient)
         {
-            DoctorPatients.Add(newPatient);
+            doctorPatients.Add(newPatient);
             numPatients++;
         }
     }

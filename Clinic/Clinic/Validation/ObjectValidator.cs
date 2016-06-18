@@ -33,5 +33,51 @@
                 return false;
             }
         }
+
+        public static bool CheckIfPhoneIsValidLandline(string phone)
+        {
+            
+            if ( string.IsNullOrEmpty(phone) )
+            {
+                return false;
+            }
+            try
+            {   //TODO: Better regex
+                //Matches
+                //02-343536 | 02/343536 | 066 343536
+                //Non - Matches
+                //02a343536 | 02+343536
+                return Regex.IsMatch(phone,
+                      @"^([0-9]*\-?\ ?\/?[0-9]*)$",
+                      RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch ( RegexMatchTimeoutException )
+            {
+                return false;
+            }
+        }
+
+        public static bool CheckIfMobilePhoneIsValid(string phone)
+        {
+            if ( string.IsNullOrEmpty(phone) )
+            {
+                return false;
+            }
+            try
+            {
+                //TODO: Better regex
+                //Matches
+                //0888123456 0987698652
+                //Non - Matches
+                //0888 123 456 | 0888-123-456
+                return Regex.IsMatch(phone,
+                      @"^((088)|(087)|(089)|(098)){1}[0-9]{7}",
+                      RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch ( RegexMatchTimeoutException )
+            {
+                return false;
+            }
+        }
     }
 }

@@ -1,9 +1,11 @@
-﻿namespace ConsoleApplication2.People
+﻿using ConsoleApplication2.Common;
+
+namespace ConsoleApplication2.People
 {
     using System;
     using Validation;
 
-    public struct ContactInfo
+    public class ContactInfo
     {
         private string firstName;
         private string middleName;
@@ -11,13 +13,18 @@
         private string email;
         private string phoneNumber;
 
-        public ContactInfo(string firstName, string middleName, string lastName, string phoneNumber, string email = "")
+        public ContactInfo(string firstName, string middleName, string lastName, string phoneNumber, string email = null)
         {
-            this.firstName = firstName;
-            this.middleName = middleName;
-            this.lastName = lastName;
-            this.email = email;
-            this.phoneNumber = phoneNumber;
+            this.FirstName = firstName.Trim();
+            this.MiddleName = middleName.Trim();
+            this.LastName = lastName.Trim();
+            this.Email = email.Trim();
+            this.PhoneNumber = phoneNumber.Trim();
+        }
+
+        public string FullName
+        {
+            get { return $"{FirstName} {MiddleName} {LastName}"; }
         }
 
         public string FirstName
@@ -27,7 +34,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException("First name cannot be empty!");
+                    throw new ArgumentException(GlobalErrorMessages.FirstNameEmptyErrorMessage);
                 }
                 else
                 {
@@ -43,7 +50,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException("Middle name cannot be empty!");
+                    throw new ArgumentException(GlobalErrorMessages.MiddleNameEmptyErrorMessage);
                 }
                 else
                 {
@@ -59,7 +66,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException("Last name cannot be empty!");
+                    throw new ArgumentException(GlobalErrorMessages.LastNameEmptyErrorMessage);
                 }
                 else
                 {
@@ -79,7 +86,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException("The e-mail is invalid!");
+                    throw new ArgumentException(GlobalErrorMessages.InvalidEmailErrorMessage);
                 }
             }
         }
@@ -87,7 +94,19 @@
         public string PhoneNumber
         {
             get { return phoneNumber; }
-            set { phoneNumber = value; }
+            set
+            {
+                if (ObjectValidator.CheckIfPhoneIsValidLandline(value)
+                    || ObjectValidator.CheckIfMobilePhoneIsValid(value))
+                {
+                phoneNumber = value;
+
+                }
+                else
+                {
+                    throw new ArgumentException(GlobalErrorMessages.InvalidPhoneErrorMessage);
+                }
+            }
         }
     }
 }

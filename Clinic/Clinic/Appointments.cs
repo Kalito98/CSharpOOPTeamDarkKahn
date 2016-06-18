@@ -2,6 +2,8 @@
 {
     using System;
     using System.Globalization;
+    using ConsoleApplication2.People;
+
 
     public class Appointments
     {

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
+    using ConsoleApplication2.People;
 
     public class Doctor
     {

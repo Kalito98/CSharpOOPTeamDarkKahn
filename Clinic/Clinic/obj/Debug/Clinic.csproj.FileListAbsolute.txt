@@ -4,3 +4,9 @@ C:\Users\PC\Desktop\siqqQ\CSharpOOPTeamDarkKahn\Clinic\Clinic\bin\Debug\ConsoleA
 C:\Users\PC\Desktop\siqqQ\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\Clinic.csprojResolveAssemblyReference.cache
 C:\Users\PC\Desktop\siqqQ\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\ConsoleApplication2.exe
 C:\Users\PC\Desktop\siqqQ\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\ConsoleApplication2.pdb
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\ConsoleApplication2.exe
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\ConsoleApplication2.pdb
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\bin\Debug\ConsoleApplication2.exe
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\bin\Debug\ConsoleApplication2.pdb
+C:\Users\kaloy\Desktop\GitHub\CSharpOOPTeamDarkKahn\Clinic\Clinic\obj\Debug\Clinic.csprojResolveAssemblyReference.cache

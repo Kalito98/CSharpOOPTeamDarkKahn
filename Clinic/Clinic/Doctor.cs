@@ -51,7 +51,7 @@
             }
         }
 
-        Doctor(string name, string phone, string email)
+        public Doctor(string name, string phone, string email)
         {
             this.doctorPatients = new List<Patient>();
             this.name = name;

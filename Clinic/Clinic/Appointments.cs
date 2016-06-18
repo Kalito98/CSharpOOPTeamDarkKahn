@@ -2,27 +2,46 @@
 {
     using System;
     using System.Globalization;
+    using ConsoleApplication2.People;
+
 
     public class Appointments
     {
+        private string appointmentNumber;
         private DateTime plannedDateAndTime;
         private Patient patient;
-        private string doctor;          //Replace after class Doctor 
-        private Status status;
+        private Doctor doctor;
+        private string status;
         private int plannedTime;        //in minutes 
 
-        public Appointments(Patient patient, string doctor, Status status, int plannedTime, string time, string date)
+        public string AppointmentNumber
         {
+            private set { this.appointmentNumber = value; }
+            get { return appointmentNumber; }
+        }
+        public string Status
+        {
+            private set { this.status = value; }
+            get { return status; }
+        }
+        public int PlannedTime
+        {
+            private set { this.plannedTime = value; }
+            get { return plannedTime; }
+        }
+        public DateTime PlannedDateAndTime
+        {
+            get { return this.plannedDateAndTime; }
+        }
+
+        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status, int plannedTime, string time, string date)
+        {
+            this.appointmentNumber = appointmentNumber;
             this.patient = patient;
             this.doctor = doctor;
             this.status = status;
             this.plannedTime = plannedTime;
             this.plannedDateAndTime = FormatDate(date, time);
-        }
-
-        public DateTime PlannedDateAndTime
-        {
-            get { return this.plannedDateAndTime; }
         }
 
         private DateTime FormatDate(string date, string time)
@@ -33,7 +52,17 @@
             return returnDate;
         }
 
-        public enum Status
+        public void GetApointmentInfo()
+        {
+            Console.WriteLine("№: " + appointmentNumber);
+            Console.WriteLine("Status: " + status);
+            Console.WriteLine("Patient: ");      //waiting implementation
+            Console.WriteLine("Doctor: " + doctor.Name);
+            Console.WriteLine("Time: " + plannedTime + " Minutes");
+            Console.WriteLine("Appointment planned for: " + plannedDateAndTime);
+        }
+
+        public enum StatusEnum
         {
             Planned = 0,
             Completed = 1,

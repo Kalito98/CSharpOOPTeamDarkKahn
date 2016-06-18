@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
+    using ConsoleApplication2.People;
 
     public class Doctor
     {
@@ -51,7 +52,7 @@
             }
         }
 
-        Doctor(string name, string phone, string email)
+        public Doctor(string name, string phone, string email)
         {
             this.doctorPatients = new List<Patient>();
             this.name = name;

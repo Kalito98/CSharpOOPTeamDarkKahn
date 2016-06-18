@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication2
+﻿namespace Clinic
 {
-    class Appointments
+    using System;
+    using System.Globalization;
+
+    public class Appointments
     {
         private DateTime plannedDateAndTime;
         private Patient patient;

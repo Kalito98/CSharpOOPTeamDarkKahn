@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication2
+﻿namespace Clinic
 {
-    class Speciality
+    using System.Collections.Generic;
+
+    public class Speciality
     {
         private string name;
         private List<Doctor> specialityDoctors = new List<Doctor>();

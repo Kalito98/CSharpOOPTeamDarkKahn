@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
-
-namespace ConsoleApplication2
+﻿namespace Clinic
 {
-    class Doctor
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+
+    public class Doctor
     {
         const byte maxPatients = 10;
         const byte defaultPatients = 0;

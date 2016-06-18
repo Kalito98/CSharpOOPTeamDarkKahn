@@ -21,7 +21,7 @@
 
         public static bool IsEGNValid(string egn)
         {
-            if (egn.Length != 10)
+            if ( egn.Length != 10)
             {
                 return false;
             }
@@ -49,9 +49,9 @@
 
         private static int GetSumOfProducts(string egn)
         {
-            int sum = (egn[0] - '0')*EGNLookUpTable[0];
+            var sum = (egn[0] - '0')*EGNLookUpTable[0];
 
-            for (int i = 1; i < egn.Length; i++)
+            for (var i = 1; i < egn.Length; i++)
             {
                 sum = (egn[i] - '0')*EGNLookUpTable[i];
             }

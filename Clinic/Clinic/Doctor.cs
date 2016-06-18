@@ -9,13 +9,35 @@ namespace ConsoleApplication2
 {
     class Doctor
     {
+        const byte maxPatients = 10;
+        const byte defaultPatients = 0;
+
+        byte numPatients;
         private string name;
         private string phone;
         private string email;
+        private List<Patient> doctorPatients;
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            private set
+            {
+                this.name = value;
+            }
+        }
 
         Doctor(string name, string phone, string email)
         {
-            this.DoctorPatients = new List<Patient>();       
+            this.doctorPatients = new List<Patient>();
+            this.name = name;
+            this.phone = phone;
+            this.numPatients = defaultPatients;
+
+            this.email = email;       
         }
 
         public bool IsLegitDoctorsVariables()
@@ -32,7 +54,7 @@ namespace ConsoleApplication2
                     }
                 }
             }
-            for (int i = 0; i < phone.Length; i++)
+            for (int i = 0; i < this.phone.Length; i++)
             {
                 if (!char.IsNumber(phone[i]))
                 {
@@ -54,11 +76,26 @@ namespace ConsoleApplication2
             return rgxEmail.IsMatch(email);
         }
 
+        public void getInfoDoctor()
+        {
+            Console.WriteLine("Name: {0}",this.name);
+            Console.WriteLine("Phone: {0}",this.phone);
+            Console.WriteLine("E-mail: {0}",this.email);
+        }
+
+        public bool hasEnoughPatients()
+        {
+            if (numPatients >= maxPatients)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public void addNewPatient(Patient newPatient)
         {
             DoctorPatients.Add(newPatient);
+            numPatients++;
         }
-
-        public List<Patient> DoctorPatients { get; private set; }
     }
 }

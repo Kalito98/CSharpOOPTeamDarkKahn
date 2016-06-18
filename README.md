@@ -19,4 +19,4 @@
 
 ###Any other information (optionally)
 
-[Repo URL]: https://github.com/Kalito98/CSharpOOPTeamDarkKahn/graphs/contributors
+[Repo URL]: https://github.com/Kalito98/CSharpOOPTeamDarkKahn/

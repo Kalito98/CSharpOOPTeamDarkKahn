@@ -48,8 +48,9 @@
     <Compile Include="Common\GlobalConstants.cs" />
     <Compile Include="Common\GlobalErrorMessages.cs" />
     <Compile Include="Diseases.cs" />
+    <Compile Include="Payment\TreatmentPrices.cs" />
     <Compile Include="People\Patient.cs" />
-    <Compile Include="Payments.cs" />
+    <Compile Include="Payment\Payments.cs" />
     <Compile Include="People\ContactInfo.cs" />
     <Compile Include="People\Contracts\IContactable.cs" />
     <Compile Include="People\Person.cs" />

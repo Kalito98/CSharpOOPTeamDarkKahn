@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointments.cs" />
+    <Compile Include="Models\Appointments\Appointments.cs" />
     <Compile Include="Models\Clinic\Clinic.cs" />
     <Compile Include="Models\Common\GlobalConstants.cs" />
     <Compile Include="Models\Common\GlobalErrorMessages.cs" />
@@ -67,7 +67,6 @@
     <None Include="DarkKhanDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Appointments\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

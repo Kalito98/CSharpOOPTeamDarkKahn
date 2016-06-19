@@ -4,7 +4,7 @@
     <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAaIAAAEAAAAAAAACAAAIAEABAADAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Appointments.cs</FileName>
+      <FileName>Models\Appointments\Appointments.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Clinic.Clinic" Collapsed="true">
@@ -40,13 +40,6 @@
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAIAAIAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Speciality\Speciality.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Clinic.Program" Collapsed="true">
-    <Position X="13" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleApplication2.Common.GlobalConstants" Collapsed="true">

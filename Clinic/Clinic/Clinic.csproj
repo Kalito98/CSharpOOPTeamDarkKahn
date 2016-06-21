@@ -48,6 +48,7 @@
     <Compile Include="Models\Common\GlobalConstants.cs" />
     <Compile Include="Models\Common\GlobalErrorMessages.cs" />
     <Compile Include="Models\Diseases\Diseases.cs" />
+    <Compile Include="Models\Diseases\GroupDiseases.cs" />
     <Compile Include="Models\Payment\TreatmentPrices.cs" />
     <Compile Include="Models\People\Patient.cs" />
     <Compile Include="Models\Payment\Payments.cs" />

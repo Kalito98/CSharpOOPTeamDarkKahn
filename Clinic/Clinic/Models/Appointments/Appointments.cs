@@ -84,7 +84,7 @@
             Console.WriteLine("№: " + appointmentNumber);
             Console.WriteLine("Status: " + status);
             Console.WriteLine("Patient: "); //waiting implementation
-            Console.WriteLine("Doctor: " + doctor.Name);
+            Console.WriteLine("Doctor: " + doctor.ContactInfo.FullName);
             Console.WriteLine("Time: " + plannedTime + " Minutes");
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);
         }

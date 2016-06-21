@@ -50,11 +50,11 @@
 
             paymentsDetails.Append("Doctor details: ");
             paymentsDetails.AppendLine(new string('-', 40));
-            paymentsDetails.Append("Doctor name: " + Doctor.Name);
+            paymentsDetails.Append("Doctor name: " + Doctor.ContactInfo.FullName);
 
 
             paymentsDetails.Append("Customer contacts: ");
-            paymentsDetails.Append("Phone: " + Doctor.Phone + "  Email: " + Doctor.Email);
+            paymentsDetails.Append("Phone: " + Doctor.ContactInfo.PhoneNumber + "  Email: " + Doctor.ContactInfo.Email);
             paymentsDetails.AppendLine(new string('-', 40));
 
             paymentsDetails.AppendLine();

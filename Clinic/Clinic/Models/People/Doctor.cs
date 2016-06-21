@@ -1,94 +1,58 @@
 ﻿namespace ConsoleApplication2.Models.People
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text.RegularExpressions;
+    using Speciality;
+    using Common;
 
-    public class Doctor
+    public class Doctor : Person
     {
-        const byte maxPatients = 10;
-        const byte defaultPatients = 0;
+        const byte MaxPatients = GlobalConstants.MaxPatientsPerDoctor;
 
-        byte numPatients;
-        private string name;
-        private string phone;
-        private string email;
         private List<Patient> doctorPatients;
 
-        public string Name
+        public int NumPatients
         {
-            get { return this.name; }
-            private set { this.name = value; }
+            get { return this.doctorPatients.Count; }
+            
         }
 
-        public string Phone
+        public List<Patient> DoctorPatients
         {
-            get { return this.phone; }
-            private set { this.phone = value; }
+            get { return doctorPatients; }
+            set { doctorPatients = value; }
         }
 
-        public string Email
+        public Speciality Speciality
         {
-            get { return this.email; }
-            private set { this.email = value; }
+            get { throw new System.NotImplementedException(); }
+
+            set { }
         }
 
-        public Doctor(string name, string phone, string email)
+        public Doctor(ContactInfo contactInfo, byte numPatients, List<Patient> doctorPatients) : base(contactInfo)
         {
-            this.doctorPatients = new List<Patient>();
-            this.name = name;
-            this.phone = phone;
-            this.numPatients = defaultPatients;
-            this.email = email;
+
+            this.doctorPatients = doctorPatients;
         }
 
-        public bool IsLegitDoctorsVariables()
+
+        public string GetInfoDoctor()
         {
-            string nameCopy = this.name;
-            string[] nameCopySplit = nameCopy.Split(' ');
-            for (int i = 0; i < nameCopySplit.Length; i++)
-            {
-                for (int j = 0; j < nameCopySplit[i].Length; j++)
-                {
-                    if (!char.IsLetter(nameCopySplit[i][j]))
-                    {
-                        return false;
-                    }
-                }
-            }
-            for (int i = 0; i < this.phone.Length; i++)
-            {
-                if (!char.IsNumber(phone[i]))
-                {
-                    return false;
-                }
-            }
-            Regex rgxEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                                       @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                                       @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-            return rgxEmail.IsMatch(email);
+            return this.ContactInfo.ToString();
         }
 
-        public void getInfoDoctor()
+        public bool HasEnoughPatients()
         {
-            Console.WriteLine("Name: {0}", this.name);
-            Console.WriteLine("Phone: {0}", this.phone);
-            Console.WriteLine("E-mail: {0}", this.email);
-        }
-
-        public bool hasEnoughPatients()
-        {
-            if (numPatients >= maxPatients)
+            if (NumPatients >= MaxPatients)
             {
                 return false;
             }
             return true;
         }
 
-        public void addNewPatient(Patient newPatient)
+        public void AddNewPatient(Patient newPatient)
         {
             doctorPatients.Add(newPatient);
-            numPatients++;
         }
     }
 }

@@ -38,23 +38,23 @@
             paymentsDetails.AppendLine(new string('-', 40));
             paymentsDetails.Append("Customer name: ");
 
-            paymentsDetails.Append(Patient.PersonalInfo.FirstName + " " + Patient.PersonalInfo.MiddleName + " " +
-                                   Patient.PersonalInfo.LastName);
+            paymentsDetails.Append(Patient.ContactInfo.FirstName + " " + Patient.ContactInfo.MiddleName + " " +
+                                   Patient.ContactInfo.LastName);
             paymentsDetails.Append("Customer contacts: ");
 
-            paymentsDetails.Append("Phone: " + Patient.PersonalInfo.PhoneNumber + "  Email:" +
-                                   Patient.PersonalInfo.Email);
+            paymentsDetails.Append("Phone: " + Patient.ContactInfo.PhoneNumber + "  Email:" +
+                                   Patient.ContactInfo.Email);
 
             paymentsDetails.AppendLine();
             paymentsDetails.AppendLine(new string('*', 40));
 
             paymentsDetails.Append("Doctor details: ");
             paymentsDetails.AppendLine(new string('-', 40));
-            paymentsDetails.Append("Doctor name: " + Doctor.Name);
+            paymentsDetails.Append("Doctor name: " + Doctor.ContactInfo.FullName);
 
 
             paymentsDetails.Append("Customer contacts: ");
-            paymentsDetails.Append("Phone: " + Doctor.Phone + "  Email: " + Doctor.Email);
+            paymentsDetails.Append("Phone: " + Doctor.ContactInfo.PhoneNumber + "  Email: " + Doctor.ContactInfo.Email);
             paymentsDetails.AppendLine(new string('-', 40));
 
             paymentsDetails.AppendLine();

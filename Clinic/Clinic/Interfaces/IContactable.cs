@@ -4,7 +4,7 @@
 
     public interface IContactable
     {
-        ContactInfo PersonalInfo { get; set; }
+        ContactInfo ContactInfo { get; set; }
 
         string GetFullContactInfo();
     }

@@ -1,9 +1,8 @@
-﻿namespace Clinic
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
-    using ConsoleApplication2.People;
 
     public class Doctor
     {
@@ -18,38 +17,20 @@
 
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
-            private set
-            {
-                this.name = value;
-            }
+            get { return this.name; }
+            private set { this.name = value; }
         }
 
         public string Phone
         {
-            get
-            {
-                return this.phone;
-            }
-            private set
-            {
-                this.phone = value;
-            }
+            get { return this.phone; }
+            private set { this.phone = value; }
         }
 
         public string Email
         {
-            get
-            {
-                return this.email;
-            }
-            private set
-            {
-                this.email = value;
-            }
+            get { return this.email; }
+            private set { this.email = value; }
         }
 
         public Doctor(string name, string phone, string email)
@@ -58,7 +39,7 @@
             this.name = name;
             this.phone = phone;
             this.numPatients = defaultPatients;
-            this.email = email;       
+            this.email = email;
         }
 
         public bool IsLegitDoctorsVariables()
@@ -83,16 +64,16 @@
                 }
             }
             Regex rgxEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                               @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                               @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+                                       @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                       @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
             return rgxEmail.IsMatch(email);
         }
 
         public void getInfoDoctor()
         {
-            Console.WriteLine("Name: {0}",this.name);
-            Console.WriteLine("Phone: {0}",this.phone);
-            Console.WriteLine("E-mail: {0}",this.email);
+            Console.WriteLine("Name: {0}", this.name);
+            Console.WriteLine("Phone: {0}", this.phone);
+            Console.WriteLine("E-mail: {0}", this.email);
         }
 
         public bool hasEnoughPatients()

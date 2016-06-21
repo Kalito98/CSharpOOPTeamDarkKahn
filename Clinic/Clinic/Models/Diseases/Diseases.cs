@@ -1,8 +1,6 @@
-﻿namespace Clinic
+﻿namespace ConsoleApplication2.Models.Diseases
 {
     using System;
-    using ConsoleApplication2.People;
-
     public class Diseases
     {
         private string diseaseCode;

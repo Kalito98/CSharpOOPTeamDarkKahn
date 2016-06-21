@@ -1,8 +1,7 @@
-﻿namespace ConsoleApplication2.People
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
-    using People.Contracts;
-
+    using Interfaces;
     public abstract class Person : IContactable
     {
         public ContactInfo PersonalInfo { get; set; }

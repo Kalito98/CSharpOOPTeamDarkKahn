@@ -1,6 +1,5 @@
 ﻿namespace ConsoleApplication2.Validation
 {
-    using System;
     using System.Collections.Generic;
 
     public static class EGNValidator
@@ -53,7 +52,7 @@
 
             for (var i = 1; i < egn.Length; i++)
             {
-                sum = (egn[i] - '0')*EGNLookUpTable[i];
+                sum += (egn[i] - '0')*EGNLookUpTable[i];
             }
             return sum;
         }

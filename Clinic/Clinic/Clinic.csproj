@@ -58,7 +58,7 @@
     <Compile Include="Models\Procedures\Procedures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Speciality\Speciality.cs" />
-    <Compile Include="Models\Doctor\Doctor.cs" />
+    <Compile Include="Models\People\Doctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\EGNValidator.cs" />
     <Compile Include="Validation\ObjectValidator.cs" />

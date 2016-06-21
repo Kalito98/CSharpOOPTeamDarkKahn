@@ -2,7 +2,6 @@
 {
     using System;
     using System.Text.RegularExpressions;
-
     using Common;
 
     public static class ObjectValidator

@@ -1,14 +1,14 @@
-﻿namespace Payment
+﻿namespace ConsoleApplication2.Models.Payment
 {
-    using Clinic;
-    using ConsoleApplication2.People;
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using People;
+    using Diseases;
 
     public class Payments : TreatmentPrices
     {
-        //public TreatmentPrices PriceToPay { get; set; }
+        public TreatmentPrices PriceToPay { get; set; }
         public Doctor Doctor { get; set; }
         public Patient Patient { get; set; }
         public Diseases Diseases { get; set; }
@@ -21,6 +21,7 @@
             this.Patient = patient;
             this.Diseases = diseases;
         }
+
         public static void PrintPayments(IEnumerable<Payments> payments)
         {
             foreach (var payment in payments)
@@ -29,6 +30,7 @@
                 Console.WriteLine();
             }
         }
+
         public override string ToString()
         {
             var paymentsDetails = new StringBuilder();
@@ -36,10 +38,12 @@
             paymentsDetails.AppendLine(new string('-', 40));
             paymentsDetails.Append("Customer name: ");
 
-            paymentsDetails.Append(Patient.PersonalInfo.FirstName + " " + Patient.PersonalInfo.MiddleName + " " + Patient.PersonalInfo.LastName);
+            paymentsDetails.Append(Patient.PersonalInfo.FirstName + " " + Patient.PersonalInfo.MiddleName + " " +
+                                   Patient.PersonalInfo.LastName);
             paymentsDetails.Append("Customer contacts: ");
 
-            paymentsDetails.Append("Phone: " + Patient.PersonalInfo.PhoneNumber + "  Email:" + Patient.PersonalInfo.Email);
+            paymentsDetails.Append("Phone: " + Patient.PersonalInfo.PhoneNumber + "  Email:" +
+                                   Patient.PersonalInfo.Email);
 
             paymentsDetails.AppendLine();
             paymentsDetails.AppendLine(new string('*', 40));

@@ -1,10 +1,9 @@
-﻿namespace ConsoleApplication2.People
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
-    using ConsoleApplication2.Common;
-    using ConsoleApplication2.Validation;
-
-    public class Patient: Person
+    using Common;
+    using Validation;
+    public class Patient : Person
     {
         private string _pid;
 

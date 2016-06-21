@@ -1,10 +1,8 @@
-﻿using ConsoleApplication2.Common;
-
-namespace ConsoleApplication2.People
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
+    using Common;
     using Validation;
-
     public class ContactInfo
     {
         private string firstName;

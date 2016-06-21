@@ -1,8 +1,7 @@
-﻿namespace Payment
+﻿namespace ConsoleApplication2.Models.Payment
 {
     using System;
     using System.Collections.Generic;
-
     public class TreatmentPrices
     {
         private string diseaseKind;

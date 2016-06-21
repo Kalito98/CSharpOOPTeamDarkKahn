@@ -1,5 +1,7 @@
-﻿namespace ConsoleApplication2.People.Contracts
+﻿namespace ConsoleApplication2.Interfaces
 {
+    using Models.People;
+
     public interface IContactable
     {
         ContactInfo PersonalInfo { get; set; }

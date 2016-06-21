@@ -1,8 +1,7 @@
-﻿namespace Clinic
+﻿namespace ConsoleApplication2.Models.Procedures
 {
     using System;
-    using ConsoleApplication2.People;
-
+    using People;
     public class Procedures
     {
         private string name;

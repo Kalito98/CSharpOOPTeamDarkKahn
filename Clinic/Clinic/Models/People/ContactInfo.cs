@@ -106,5 +106,10 @@
                 }
             }
         }
+
+        public override string ToString()
+        {
+            return $"Name: {this.FullName}\nPhone: {this.PhoneNumber}\nE-Mail: {this.Email}";
+        }
     }
 }

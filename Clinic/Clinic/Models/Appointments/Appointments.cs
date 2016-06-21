@@ -36,6 +36,30 @@
             get { return this.plannedDateAndTime; }
         }
 
+        public Patient Patient
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Doctor Doctor
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status,
             int plannedTime, string time, string date)
         {

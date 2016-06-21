@@ -23,7 +23,19 @@
             }
         }
 
-        public Patient(ContactInfo personalInfo, string pid) : base(personalInfo)
+        public Diseases.Diseases Diseases
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Patient(ContactInfo contactInfo, string pid) : base(contactInfo)
         {
             this.Pid = pid;
         }

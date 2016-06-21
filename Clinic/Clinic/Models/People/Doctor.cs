@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
-    public class Doctor
+    public class Doctor : Person
     {
         const byte maxPatients = 10;
         const byte defaultPatients = 0;
@@ -33,6 +33,18 @@
             private set { this.email = value; }
         }
 
+        public Speciality.Speciality Speciality
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public Doctor(string name, string phone, string email)
         {
             this.doctorPatients = new List<Patient>();
@@ -46,19 +58,19 @@
         {
             string nameCopy = this.name;
             string[] nameCopySplit = nameCopy.Split(' ');
-            for (int i = 0; i < nameCopySplit.Length; i++)
+            for ( int i = 0; i < nameCopySplit.Length; i++ )
             {
-                for (int j = 0; j < nameCopySplit[i].Length; j++)
+                for ( int j = 0; j < nameCopySplit[i].Length; j++ )
                 {
-                    if (!char.IsLetter(nameCopySplit[i][j]))
+                    if ( !char.IsLetter(nameCopySplit[i][j]) )
                     {
                         return false;
                     }
                 }
             }
-            for (int i = 0; i < this.phone.Length; i++)
+            for ( int i = 0; i < this.phone.Length; i++ )
             {
-                if (!char.IsNumber(phone[i]))
+                if ( !char.IsNumber(phone[i]) )
                 {
                     return false;
                 }
@@ -78,7 +90,7 @@
 
         public bool hasEnoughPatients()
         {
-            if (numPatients >= maxPatients)
+            if ( numPatients >= maxPatients )
             {
                 return false;
             }

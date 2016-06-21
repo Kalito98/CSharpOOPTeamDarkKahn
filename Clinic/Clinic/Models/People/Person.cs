@@ -13,9 +13,7 @@
 
         public string GetFullContactInfo()
         {
-            //TODO:
-            throw new NotImplementedException("No contact info yet");
-            return $"{this.ContactInfo.FirstName}";
+            return this.ContactInfo.ToString();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using ConsoleApplication2.Models.Appointments;
+using ConsoleApplication2.Models.People;
+using System.Collections.Generic;
 
 namespace Clinic
 {
@@ -7,15 +9,16 @@ namespace Clinic
     {
         static void Main(string[] args)
         {
-           //Patient testPatient = new Patient();
-           //Appointments test = new Appointments(testPatient, "TestDoctor", 0, 45, "16:40", "2016.08.19");
-           //DateTime testDateTime = test.PlannedDateAndTime;
-           //Console.WriteLine(testDateTime);
-           //  Some testing for the appointments
+            //Patient testPatient = new Patient();
+            //Appointments test = new Appointments(testPatient, "TestDoctor", 0, 45, "16:40", "2016.08.19");
+            //DateTime testDateTime = test.PlannedDateAndTime;
+            //Console.WriteLine(testDateTime);
             //  Some testing for the appointments
-            // Doctor testDoctor = new Doctor("Cuki", "69696969", "test@abv.bg");
-            // Patient testPatient = new Patient();
-            // Appointments test = new Appointments("69", testPatient, testDoctor, "Planned", 45, "16:40", "2016.08.19");
+            //  Some testing for the appointments
+            Doctor testDoctor = new Doctor(new ContactInfo("test", "test2", "test3", "0000000000", "test@abv.bg"), 6, new List<Patient>());
+            Patient testPatient = new Patient(new ContactInfo("test", "test2", "test3", "0000000000", "test@abv.bg"), "pid");
+            Appointments test = new Appointments("69", testPatient, testDoctor, Appointments.StatusEnum.Completed, 45, "16:40", "2016.08.19");
+            test.GetApointmentInfo();
             // DateTime testDateTime = test.PlannedDateAndTime;
             // test.GetApointmentInfo();
             //var payment=new Payments(testDoctor,testPatient,testDiseases, testDiseases.diseasesKind)

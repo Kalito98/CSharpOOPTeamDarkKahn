@@ -3,9 +3,18 @@
     using System;
     using Common;
     using Validation;
+    using Diseases;
+    using System.Collections.Generic;
+
     public class Patient : Person
     {
         private string _pid;
+
+        public List<Diseases> Diseases
+        {
+            get { return diseases; }
+            set { diseases = value; }
+        }
 
         public string Pid
         {
@@ -23,17 +32,7 @@
             }
         }
 
-        public Diseases.Diseases Diseases
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        
 
         public Patient(ContactInfo contactInfo, string pid) : base(contactInfo)
         {

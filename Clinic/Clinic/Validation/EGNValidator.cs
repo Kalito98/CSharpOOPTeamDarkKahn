@@ -7,7 +7,7 @@
 
         public static bool IsEGNValid(string egn)
         {
-            if ( egn.Length != 10)
+            if (egn.Length != 10)
             {
                 return false;
             }
@@ -19,13 +19,11 @@
             {
                 return false;
             }
-          
 
             var remainder = GetSumOfProducts(egn) % 11;
             var controlChar = (remainder < 10) ? remainder : 0;
 
             return egn[egn.Length - 1] - '0' == controlChar;
-
         }
 
         private static int GetSumOfProducts(string egn)
@@ -34,7 +32,7 @@
 
             for (var i = 0; i < 9; i++)
             {
-                sum += (egn[i] - '0')*lookUpTable[i];
+                sum += (egn[i] - '0') * lookUpTable[i];
             }
             return sum;
         }

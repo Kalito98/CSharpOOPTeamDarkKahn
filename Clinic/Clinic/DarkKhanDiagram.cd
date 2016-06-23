@@ -2,21 +2,10 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ConsoleApplication2.Models.Appointments.Appointments" Collapsed="true">
     <Position X="3" Y="3" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="ConsoleApplication2.Models.Appointments.Appointments.StatusEnum" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Models\Appointments\Appointments.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAaIAAAEAAAAAAAACAAAIAEABAADAAQAAAAABAAACAA=</HashCode>
+      <HashCode>AAaIAAAEAAAAAAAACAAAIAEABAADAAAAAAAABAAAAAA=</HashCode>
       <FileName>Models\Appointments\Appointments.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Patient" />
-      <Property Name="Doctor" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ConsoleApplication2.Models.Speciality.Speciality" Collapsed="true">
     <Position X="6.5" Y="2.75" Width="1.5" />
@@ -28,7 +17,7 @@
   <Class Name="ConsoleApplication2.Common.GlobalConstants" Collapsed="true">
     <Position X="8.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Common\GlobalConstants.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -54,9 +43,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleApplication2.Models.People.ContactInfo" Collapsed="true">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAACBAAIAgAAAQQAAAEEAAAAAAAAAACAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAACBAAIAkAAAQQAAAEEAAAAAAAAAACAAAAAg=</HashCode>
       <FileName>Models\People\ContactInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,9 +55,9 @@
       <HashCode>AAAAAAAAAAAAAAAAgACCAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\People\Patient.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
+    <ShowAsCollectionAssociation>
       <Property Name="Diseases" />
-    </ShowAsAssociation>
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ConsoleApplication2.Models.People.Person" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
@@ -76,12 +65,15 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\People\Person.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ContactInfo" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ConsoleApplication2.Validation.EGNValidator" Collapsed="true">
     <Position X="8.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAQAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAACAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Validation\EGNValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,7 +94,7 @@
   <Class Name="ConsoleApplication2.Models.People.Doctor" Collapsed="true">
     <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAGIACAAgAAAEAEQCAAAUAAQgAAAAIAACAAA=</HashCode>
+      <HashCode>AAAAAgAKAAAAAAQAAAAEAAAAAAAAAAAAEAAAAABCAAA=</HashCode>
       <FileName>Models\People\Doctor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

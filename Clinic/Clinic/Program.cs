@@ -15,8 +15,8 @@ namespace Clinic
             //Console.WriteLine(testDateTime);
             //  Some testing for the appointments
             //  Some testing for the appointments
-            Doctor testDoctor = new Doctor(new ContactInfo("test", "test2", "test3", "0000000000", "test@abv.bg"), 6, new List<Patient>());
-            Patient testPatient = new Patient(new ContactInfo("test", "test2", "test3", "0000000000", "test@abv.bg"), "pid");
+            Doctor testDoctor = new Doctor(new ContactInfo("test", "test2", "test3", "0888888888", "test@abv.bg"), 6, new List<Patient>());
+            Patient testPatient = new Patient(new ContactInfo("test", "test2", "test3", "0888888888", "test@abv.bg"), "9211227221");
             Appointments test = new Appointments("69", testPatient, testDoctor, Appointments.StatusEnum.Completed, 45, "16:40", "2016.08.19");
             test.GetApointmentInfo();
             // DateTime testDateTime = test.PlannedDateAndTime;

@@ -8,7 +8,7 @@
         public const string LastNameEmptyErrorMessage = "Last name cannot be empty!";
         public const string InvalidEmailErrorMessage = "The specified e-mail is invalid!";
         public const string InvalidPhoneErrorMessage = "The specified phone is invalid!";
-        public const string InvalidEGNErrorMessage = "The specified phone is invalid!";
+        public const string InvalidEGNErrorMessage = "The specified EGN is invalid!";
 
     }
 }

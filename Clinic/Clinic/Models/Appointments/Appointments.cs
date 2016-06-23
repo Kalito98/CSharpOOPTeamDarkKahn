@@ -36,29 +36,29 @@
             get { return this.plannedDateAndTime; }
         }
 
-        public Patient Patient
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        //public Patient Patient
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
 
-            set
-            {
-            }
-        }
+        //    set
+        //    {
+        //    }
+        //}
 
-        public Doctor Doctor
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        //public Doctor Doctor
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
 
-            set
-            {
-            }
-        }
+        //    set
+        //    {
+        //    }
+        //}
 
         public Appointments(string appointmentNumber, Patient patient, Doctor doctor, StatusEnum status,
             int plannedTime, string time, string date)
@@ -83,7 +83,7 @@
         {
             Console.WriteLine("№: " + appointmentNumber);
             Console.WriteLine("Status: " + status);
-            Console.WriteLine("Patient: " + Patient.ContactInfo.FullName); 
+            Console.WriteLine("Patient: " + patient.ContactInfo.FullName); 
             Console.WriteLine("Doctor: " + doctor.ContactInfo.FullName);
             Console.WriteLine("Time: " + plannedTime + " Minutes");
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);

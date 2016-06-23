@@ -10,7 +10,7 @@
         private DateTime plannedDateAndTime;
         private Patient patient;
         private Doctor doctor;
-        private string status;
+        private StatusEnum status;
         private int plannedTime; //in minutes 
 
         public string AppointmentNumber
@@ -19,7 +19,7 @@
             get { return appointmentNumber; }
         }
 
-        public string Status
+        public StatusEnum Status
         {
             private set { this.status = value; }
             get { return status; }
@@ -60,7 +60,7 @@
             }
         }
 
-        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status,
+        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, StatusEnum status,
             int plannedTime, string time, string date)
         {
             this.appointmentNumber = appointmentNumber;
@@ -83,7 +83,7 @@
         {
             Console.WriteLine("№: " + appointmentNumber);
             Console.WriteLine("Status: " + status);
-            Console.WriteLine("Patient: "); //waiting implementation
+            Console.WriteLine("Patient: " + Patient.ContactInfo.FullName); 
             Console.WriteLine("Doctor: " + doctor.ContactInfo.FullName);
             Console.WriteLine("Time: " + plannedTime + " Minutes");
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);

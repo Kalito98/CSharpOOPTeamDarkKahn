@@ -66,12 +66,13 @@
             try
             {
                 //TODO: Better regex
+                //TODO: Find a way to validate international phones
                 //Matches
-                //0888123456 0987698652
+                //0888123456, 0987698652, +359-888-879-888, 0888-888888, 0888 888 888, 359 888 888 888, 888-879-888, 0888-879-888, 0878 888 888, 0987888888
                 //Non - Matches
-                //0888 123 456 | 0888-123-456
+                //3598888798889856, 0568 659 569, 0233565987
                 return Regex.IsMatch(phone,
-                      @"^((088)|(087)|(089)|(098)){1}[0-9]{7}",
+                      @"^(\+?(359)?0?(-|\s)?((88)|(87)|(89)|(98))){1}[0-9]{1}(-|\s)?([0-9]{3}(-|\s)?){2}$",
                       RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
             }
             catch ( RegexMatchTimeoutException )

@@ -214,3 +214,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+*.suo
+Clinic/.vs/Clinic/v14/.suo
+*.suo

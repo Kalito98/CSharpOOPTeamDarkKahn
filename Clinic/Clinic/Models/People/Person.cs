@@ -1,22 +1,19 @@
-﻿namespace ConsoleApplication2.People
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
-    using People.Contracts;
-
+    using Interfaces;
     public abstract class Person : IContactable
     {
-        public ContactInfo PersonalInfo { get; set; }
+        public ContactInfo ContactInfo { get; set; }
 
-        protected Person(ContactInfo personalInfo)
+        protected Person(ContactInfo contactInfo)
         {
-            this.PersonalInfo = personalInfo;
+            this.ContactInfo = contactInfo;
         }
 
         public string GetFullContactInfo()
         {
-            //TODO:
-            throw new NotImplementedException("No contact info yet");
-            return $"{this.PersonalInfo.FirstName}";
+            return this.ContactInfo.ToString();
         }
     }
 }

@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointments.cs" />
+    <Compile Include="Models\Appointments\Appointments.cs" />
     <Compile Include="Models\Clinic\Clinic.cs" />
     <Compile Include="Models\Common\GlobalConstants.cs" />
     <Compile Include="Models\Common\GlobalErrorMessages.cs" />
     <Compile Include="Models\Diseases\Diseases.cs" />
+    <Compile Include="Models\Diseases\GroupDiseases.cs" />
     <Compile Include="Models\Payment\TreatmentPrices.cs" />
     <Compile Include="Models\People\Patient.cs" />
     <Compile Include="Models\Payment\Payments.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="Models\Procedures\Procedures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Speciality\Speciality.cs" />
-    <Compile Include="Models\Doctor\Doctor.cs" />
+    <Compile Include="Models\People\Doctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\EGNValidator.cs" />
     <Compile Include="Validation\ObjectValidator.cs" />
@@ -67,7 +68,6 @@
     <None Include="DarkKhanDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Appointments\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

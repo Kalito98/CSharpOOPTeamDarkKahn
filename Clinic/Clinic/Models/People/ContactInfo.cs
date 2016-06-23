@@ -1,10 +1,8 @@
-﻿using ConsoleApplication2.Common;
-
-namespace ConsoleApplication2.People
+﻿namespace ConsoleApplication2.Models.People
 {
     using System;
+    using Common;
     using Validation;
-
     public class ContactInfo
     {
         private string firstName;
@@ -107,6 +105,11 @@ namespace ConsoleApplication2.People
                     throw new ArgumentException(GlobalErrorMessages.InvalidPhoneErrorMessage);
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {this.FullName}\nPhone: {this.PhoneNumber}\nE-Mail: {this.Email}";
         }
     }
 }

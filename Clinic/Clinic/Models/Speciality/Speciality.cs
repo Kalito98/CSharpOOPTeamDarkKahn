@@ -1,6 +1,8 @@
-﻿namespace Clinic
+﻿namespace ConsoleApplication2.Models.Speciality
 {
     using System.Collections.Generic;
+    using People;
+    using Diseases;
 
     public class Speciality
     {

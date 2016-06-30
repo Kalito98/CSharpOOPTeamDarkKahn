@@ -9,6 +9,7 @@
     public class Patient : Person
     {
         private string _pid;
+        private List<Diseases> diseases;
 
         public List<Diseases> Diseases
         {

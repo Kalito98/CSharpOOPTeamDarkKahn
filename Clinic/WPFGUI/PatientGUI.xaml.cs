@@ -27,7 +27,7 @@ namespace WPFGUI
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Patient newPatient = new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), "4417733890");
+            Patient newPatient = new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text);
         }
     }
 }

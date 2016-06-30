@@ -12,7 +12,6 @@
             <ColumnDefinition Width="103*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="button" Content="New Patient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="22,22,0,0" Click="button_Click" Cursor="Hand"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="151,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

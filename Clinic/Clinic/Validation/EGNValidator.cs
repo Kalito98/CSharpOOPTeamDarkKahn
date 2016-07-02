@@ -1,19 +1,46 @@
 ﻿namespace ConsoleApplication2.Validation
 {
-    public static class EGNValidator
+    using System;
+    public static class EgnValidator
     {
-        //TODO: Check date of birth validity
-        private static readonly int[] lookUpTable = {2, 4, 8, 5, 10, 9, 7, 3, 6};
+        private static readonly int[] LookUpTable = {2, 4, 8, 5, 10, 9, 7, 3, 6};
 
-        public static bool IsEGNValid(string egn)
+        public static bool IsEgnValid(string egn)
         {
-            if (egn.Length != 10)
+            if ( egn.Length != 10 )
             {
                 return false;
             }
             try
             {
                 ulong.Parse(egn);
+            }
+            catch
+            {
+                return false;
+            }
+
+            var year = int.Parse(egn.Substring(0, 2));
+            var month = int.Parse(egn.Substring(2, 2));
+            var day = int.Parse(egn.Substring(4, 2));
+
+            if (month > 40)
+            {
+                month -= 40;
+                year += 2000;
+            }
+            else if (month > 20)
+            {
+                month -= 20;
+                year += 1800;
+            }
+            else
+            {
+                year += 1900;
+            }
+            try
+            {
+                new DateTime(year, month, day);
             }
             catch
             {
@@ -32,7 +59,7 @@
 
             for (var i = 0; i < 9; i++)
             {
-                sum += (egn[i] - '0') * lookUpTable[i];
+                sum += (egn[i] - '0') * LookUpTable[i];
             }
             return sum;
         }

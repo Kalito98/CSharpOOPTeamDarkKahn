@@ -1,6 +1,5 @@
 ﻿namespace ConsoleApplication2.Models.People
 {
-    using System;
     using Interfaces;
     public abstract class Person : IContactable
     {

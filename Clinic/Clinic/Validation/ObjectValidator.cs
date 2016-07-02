@@ -44,11 +44,11 @@
             try
             {   //TODO: Better regex
                 //Matches
-                //02-343536 | 02/343536 | 066 343536
-                //Non - Matches
-                //02a343536 | 02+343536
+                //02 492 72 00, 02 4927200, 066 4927200, 02 256 45 56, +359663565656, 359663565656, +359 66 356 56 56, +3592 356 56 56
+                //Non - Matches - any non-numeric &
+                //0568 659 569, 0878 888 888, +359-888-879-888, 02 256 45 568
                 return Regex.IsMatch(phone,
-                      @"^([0-9]*\-?\ ?\/?[0-9]*)$",
+                      @"^\+?(359)?0?(-|\s)?([0-9]{1,2})(-|\s)?([0-9]{3})(-|\s)?(([0-9]{2})(-|\s)?){2}$",
                       RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
             }
             catch ( RegexMatchTimeoutException )
@@ -66,12 +66,13 @@
             try
             {
                 //TODO: Better regex
+                //TODO: Find a way to validate international phones
                 //Matches
-                //0888123456 0987698652
-                //Non - Matches
-                //0888 123 456 | 0888-123-456
+                //0888123456, 0987698652, +359-888-859-888, 0888-888888, 0888 888 888, 359 888 888 888, 888-876-888, 0888-876-888, 0878 888 888, 0987888888
+                //Non - Matches - any non-numeric &
+                //3598888798889856, 0568 659 569, 0233565987, 02 256 45 568
                 return Regex.IsMatch(phone,
-                      @"^((088)|(087)|(089)|(098)){1}[0-9]{7}",
+                      @"^(\+?(359)?0?(-|\s)?((88)|(87)|(89)|(98))){1}[0-9]{1}(-|\s)?([0-9]{3}(-|\s)?){2}$",
                       RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
             }
             catch ( RegexMatchTimeoutException )

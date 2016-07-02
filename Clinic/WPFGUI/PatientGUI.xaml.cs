@@ -27,7 +27,30 @@ namespace WPFGUI
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Patient newPatient = new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text);
+            MessageBoxResult result = MessageBox.Show("Do you want to add this patient?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Patient newPatient = new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text);
+                    textBox.Text = string.Empty;
+                    textBox1.Text = string.Empty;
+                    textBox2.Text = string.Empty;
+                    textBox3.Text = string.Empty;
+                    textBox4.Text = string.Empty;
+                    textBox5.Text = string.Empty;
+                    MessageBox.Show("Successfully added new patient!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Information must be valid!");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

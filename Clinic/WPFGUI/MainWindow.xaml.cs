@@ -30,10 +30,5 @@ namespace WPFGUI
             var patient = new PatientGUI();
             patient.Show();
         }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

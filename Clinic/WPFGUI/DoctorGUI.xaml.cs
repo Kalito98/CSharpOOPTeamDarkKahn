@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace WPFGUI
 {
     /// <summary>
-    /// Interaction logic for Patient.xaml
+    /// Interaction logic for DoctorGUI.xaml
     /// </summary>
-    public partial class PatientGUI : Window
+    public partial class DoctorGUI : Window
     {
-        public List<Patient> patients = new List<Patient>();
-        public PatientGUI()
+        private List<Doctor> doctors = new List<Doctor>();
+        public DoctorGUI()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace WPFGUI
             {
                 try
                 {
-                    patients.Add(new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text));
+                    doctors.Add(new Doctor(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text)));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
@@ -55,3 +55,5 @@ namespace WPFGUI
         }
     }
 }
+    
+

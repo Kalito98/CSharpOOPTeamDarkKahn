@@ -13,7 +13,7 @@
         public int NumPatients
         {
             get { return this.doctorPatients.Count; }
-            
+
         }
 
         public List<Patient> DoctorPatients
@@ -33,6 +33,10 @@
         {
 
             this.doctorPatients = doctorPatients;
+        }
+
+        public Doctor(ContactInfo contactInfo) : base(contactInfo)
+        {
         }
 
 

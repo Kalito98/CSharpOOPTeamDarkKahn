@@ -11,7 +11,9 @@
             <ColumnDefinition Width="414*"/>
             <ColumnDefinition Width="103*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button" Content="New Patient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="30,30,0,0" Click="button_Click" Cursor="Hand"/>
+        <Button x:Name="button" Content="New Patient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="30,35,0,0" Click="button_Click" Cursor="Hand"/>
+        <Button x:Name="button1" Content="New Doctor" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Width="110" Click="button1_Click"/>
+        <Button x:Name="button2" Content="New Appointment" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="110" Click="button2_Click"/>
 
     </Grid>
 </Window>

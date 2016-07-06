@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ConsoleApplication2.Models.People;
 
 namespace WPFGUI
 {
@@ -20,6 +21,8 @@ namespace WPFGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Patient> patients = new List<Patient>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +32,18 @@ namespace WPFGUI
         {
             var patient = new PatientGUI();
             patient.Show();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            var doctor = new DoctorGUI();
+            doctor.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            var appointment = new AppointmentGUI();
+            appointment.Show();
         }
     }
 }

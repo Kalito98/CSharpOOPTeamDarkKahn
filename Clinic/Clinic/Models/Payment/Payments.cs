@@ -7,7 +7,8 @@
     using Diseases;
     using Validation;
     using Common;
-    public class Payments
+    using Interfaces;
+    public class Payments: IPayments
     {
         public TreatmentPrices PriceToPay { get; private set; }
         public Doctor Doctor { get; private set; }
@@ -15,11 +16,11 @@
         public string diseases;
 
 
-        public Payments(Doctor doctor, Patient patient, string diseases, string diseaseKind)
+        public Payments(Doctor doctor, Patient patient, string diseaseKind)
         {
             this.Doctor = doctor;
             this.Patient = patient;
-            this.Diseases = diseases;
+            this.Diseases = diseaseKind;
         }
 
         public string Diseases
@@ -32,7 +33,6 @@
                 this.diseases = value;
             }
         }
-
 
         public override string ToString()
         {
@@ -75,15 +75,6 @@
             paymentsDetails.AppendFormat("The total amout is: {0}", this.PriceToPay);
 
             return base.ToString();
-        }
-
-        internal void PrintPayments(IEnumerable<Payments> payments)
-        {
-            foreach (var payment in payments)
-            {
-                Console.WriteLine(payment);
-                Console.WriteLine();
-            }
         }
     }
 }

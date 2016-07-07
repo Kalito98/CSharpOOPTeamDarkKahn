@@ -41,7 +41,7 @@
             get { return this.diseasesName = Diseases.DiseasesName; }
             set
             {
-
+                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, this.GetType().Name));
                 this.diseasesName = value;
             }
         }

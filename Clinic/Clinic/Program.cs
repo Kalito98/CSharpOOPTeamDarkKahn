@@ -31,12 +31,19 @@ namespace Clinic
             Diseases testDiseases = new Diseases("88888", "Cavity", 1, 120.00M, true, GroupDiseases.Други);
 
 
-            var customer1 = new Payments(testDoctor, testPatient, testDiseases.DiseasesName, testDiseases.DiseasesName);
+            var customer1 = new Payments(testDoctor, testPatient, testDiseases.DiseasesName);
             var payments = new List<Payments>()
             {
-                new Payments(testDoctor,testPatient,testDiseases.DiseasesName, testDiseases.DiseasesName)
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName),
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName ),
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName),
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName ),
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName)
             };
-            customer1.PrintPayments(payments);
+            foreach (var item in payments)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

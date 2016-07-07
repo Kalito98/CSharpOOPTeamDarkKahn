@@ -7,7 +7,7 @@
     using Diseases;
     using Validation;
     using Common;
-    public class Payments : TreatmentPrices
+    public class Payments
     {
         public TreatmentPrices PriceToPay { get; private set; }
         public Doctor Doctor { get; private set; }
@@ -16,7 +16,6 @@
 
 
         public Payments(Doctor doctor, Patient patient, string diseases, string diseaseKind)
-            : base(diseaseKind)
         {
             this.Doctor = doctor;
             this.Patient = patient;

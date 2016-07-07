@@ -1,11 +1,18 @@
 ﻿namespace ConsoleApplication2.Models.Payment
 {
+    using Common;
+    using ConsoleApplication2.Models.Diseases;
     using Interfaces;
     using System;
     using System.Collections.Generic;
-    public class TreatmentPrices: ICalculatePrice
+    using Validation;
+    public class TreatmentPrices : ICalculatePrice,ITreatmentPrices
     {
-        private string diseaseKind;
+
+        private decimal priceToPay;
+        private string diseasesName;
+
+        public Diseases Diseases { get; }
 
         private static readonly Dictionary<string, int> TreatmentPriceList =
            new Dictionary<String, int>
@@ -22,19 +29,39 @@
            };
 
         //ToDO need info from diseases
-        
-        public TreatmentPrices(string diseaseKind)
+
+        public TreatmentPrices(decimal priceToPay )
         {
-            this.diseaseKind = diseaseKind;
+            this.priceToPay = priceToPay;
+            this.DiseasesName = diseasesName;
         }
-        public string DiseaseKind { get;private set; }
+
+        public string DiseasesName
+        {
+            get { return this.diseasesName = Diseases.DiseasesName; }
+            set
+            {
+
+                this.diseasesName = value;
+            }
+        }
+
+        public decimal PriceToPay
+        {
+            get { return this.priceToPay; }
+            set
+            {
+                StringValidators.CheckIfNull(value, String.Format(GlobalErrorMessages.ObjectCannotBeNull, this.GetType().Name));
+                this.priceToPay = value;
+            }
+        }
 
         public decimal CalculatePrice()
         {
             decimal PriceToPay = 0.0M;
-            if (TreatmentPriceList.ContainsKey(diseaseKind))
+            if (TreatmentPriceList.ContainsKey(diseasesName))
             {
-                PriceToPay += TreatmentPriceList[diseaseKind];
+                PriceToPay += TreatmentPriceList[diseasesName];
             }
             return PriceToPay;
         }

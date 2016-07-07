@@ -8,10 +8,10 @@
 
     public class Payments : TreatmentPrices
     {
-        public TreatmentPrices PriceToPay { get; set; }
-        public Doctor Doctor { get; set; }
-        public Patient Patient { get; set; }
-        public Diseases Diseases { get; set; }
+        public TreatmentPrices PriceToPay { get; private set; }
+        public Doctor Doctor { get; private set; }
+        public Patient Patient { get; private set; }
+        public Diseases Diseases { get; private set; }
 
 
         public Payments(Doctor doctor, Patient patient, Diseases diseases, string diseaseKind)
@@ -22,14 +22,7 @@
             this.Diseases = diseases;
         }
 
-        public static void PrintPayments(IEnumerable<Payments> payments)
-        {
-            foreach (var payment in payments)
-            {
-                Console.WriteLine(payment);
-                Console.WriteLine();
-            }
-        }
+       
 
         public override string ToString()
         {

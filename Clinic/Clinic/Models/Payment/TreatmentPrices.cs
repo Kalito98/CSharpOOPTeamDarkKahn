@@ -1,8 +1,9 @@
 ﻿namespace ConsoleApplication2.Models.Payment
 {
+    using Interfaces;
     using System;
     using System.Collections.Generic;
-    public class TreatmentPrices
+    public class TreatmentPrices: ICalculatePrice
     {
         private string diseaseKind;
         private static readonly Dictionary<string, int> TreatmentPriceList =
@@ -25,7 +26,8 @@
         {
             this.diseaseKind = diseaseKind;
         }
-        public string DiseaseKind { get; set; }
+        public string DiseaseKind { get;private set; }
+
         public decimal CalculatePrice()
         {
             decimal PriceToPay = 0.0M;

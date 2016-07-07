@@ -2,6 +2,8 @@
 using ConsoleApplication2.Models.Appointments;
 using ConsoleApplication2.Models.People;
 using System.Collections.Generic;
+using ConsoleApplication2.Models.Diseases;
+using ConsoleApplication2.Models.Payment;
 
 namespace Clinic
 {
@@ -26,16 +28,15 @@ namespace Clinic
             test.GetApointmentInfo();
             // DateTime testDateTime = test.PlannedDateAndTime;
             // test.GetApointmentInfo();
-            //var payment=new Payments(testDoctor,testPatient,testDiseases, testDiseases.diseasesKind)
-            //var payments = new List<Payments>()
-            //{
-            //    new Payments(testDoctor,testPatient,testDiseases, testDiseases.diseasesKind),
-            //    new Payments(testDoctor1,testPatient1,testDiseases1, testDiseases1.diseasesKind),
-            //    new Payments(testDoctor2,testPatient2,testDiseases2, testDiseases2.diseasesKind),
-            //    new Payments(testDoctor3,testPatient3,testDiseases3, testDiseases3.diseasesKind),
-            //    new Payments(testDoctor4,testPatient4,testDiseases4, testDiseases4.diseasesKind)
-            //};
-            //Payments.PrintPayments(payments);
+            Diseases testDiseases = new Diseases("88888", "Cavity", 1, 120.00M, true, GroupDiseases.Други);
+
+
+            var customer1 = new Payments(testDoctor, testPatient, testDiseases.DiseasesName, testDiseases.DiseasesName);
+            var payments = new List<Payments>()
+            {
+                new Payments(testDoctor,testPatient,testDiseases.DiseasesName, testDiseases.DiseasesName)
+            };
+            customer1.PrintPayments(payments);
         }
     }
 }

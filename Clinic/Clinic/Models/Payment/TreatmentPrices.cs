@@ -6,18 +6,19 @@
     public class TreatmentPrices: ICalculatePrice
     {
         private string diseaseKind;
+
         private static readonly Dictionary<string, int> TreatmentPriceList =
            new Dictionary<String, int>
            {
                 {"diseases1", 2},
-                {"diseases1", 4},
-                {"diseases1", 8},
-                {"diseases1", 5},
-                {"diseases1", 10},
-                {"diseases1", 9},
-                {"diseases1", 7},
-                {"diseases1", 3},
-                {"diseases1", 6},
+                {"diseases2", 4},
+                {"diseases3", 8},
+                {"diseases4", 5},
+                {"diseases5", 10},
+                {"diseases6", 9},
+                {"diseases7", 7},
+                {"diseases8", 3},
+                {"diseases9", 6},
            };
 
         //ToDO need info from diseases

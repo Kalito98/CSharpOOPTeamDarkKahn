@@ -6,6 +6,7 @@
     using System;
     using System.Collections.Generic;
     using Validation;
+
     public class TreatmentPrices : ICalculatePrice,ITreatmentPrices
     {
 

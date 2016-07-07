@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ICalculatePrice.cs" />
     <Compile Include="Interfaces\IPayments.cs" />
-    <Compile Include="Interfaces\ITreatmentPrices.cs" />
     <Compile Include="Models\Appointments\Appointments.cs" />
     <Compile Include="Models\Clinic\Clinic.cs" />
     <Compile Include="Models\Common\GlobalConstants.cs" />

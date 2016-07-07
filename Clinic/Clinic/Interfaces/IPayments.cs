@@ -5,7 +5,6 @@
 
     public interface IPayments
     {
-        TreatmentPrices PriceToPay { get;}
 
         Doctor Doctor { get;}
 

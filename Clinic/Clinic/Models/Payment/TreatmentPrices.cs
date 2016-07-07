@@ -1,68 +1,32 @@
 ﻿namespace ConsoleApplication2.Models.Payment
 {
-    using Common;
     using ConsoleApplication2.Models.Diseases;
     using Interfaces;
     using System;
     using System.Collections.Generic;
-    using Validation;
 
-    public class TreatmentPrices : ICalculatePrice,ITreatmentPrices
+    public static class TreatmentPrices
     {
-
-        private decimal priceToPay;
-        private string diseasesName;
-
-        public Diseases Diseases { get; }
-
-        private static readonly Dictionary<string, int> TreatmentPriceList =
-           new Dictionary<String, int>
+        private static Dictionary<string, decimal> TreatmentPriceList =
+           new Dictionary<String, decimal>
            {
-                {"diseases1", 2},
-                {"diseases2", 4},
-                {"diseases3", 8},
-                {"diseases4", 5},
-                {"diseases5", 10},
-                {"diseases6", 9},
-                {"diseases7", 7},
-                {"diseases8", 3},
-                {"diseases9", 6},
+                {"Cavity", 20.00M},
+                {"WisdomTooth", 42.13M},
+                {"diseases3", 81.00M},
+                {"diseases4", 55M},
+                {"diseases5", 102M},
+                {"diseases6", 99M},
+                {"diseases7", 70M},
+                {"diseases8", 30M},
+                {"diseases9", 156.34M},
            };
 
-        //ToDO need info from diseases
-
-        public TreatmentPrices(decimal priceToPay )
-        {
-            this.priceToPay = priceToPay;
-            this.DiseasesName = diseasesName;
-        }
-
-        public string DiseasesName
-        {
-            get { return this.diseasesName = Diseases.DiseasesName; }
-            set
-            {
-                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, this.GetType().Name));
-                this.diseasesName = value;
-            }
-        }
-
-        public decimal PriceToPay
-        {
-            get { return this.priceToPay; }
-            set
-            {
-                StringValidators.CheckIfNull(value, String.Format(GlobalErrorMessages.ObjectCannotBeNull, this.GetType().Name));
-                this.priceToPay = value;
-            }
-        }
-
-        public decimal CalculatePrice()
+        public static decimal CalculatePrice(string diseases)
         {
             decimal PriceToPay = 0.0M;
-            if (TreatmentPriceList.ContainsKey(diseasesName))
+            if (TreatmentPriceList.ContainsKey(diseases))
             {
-                PriceToPay += TreatmentPriceList[diseasesName];
+                PriceToPay += TreatmentPriceList[diseases];
             }
             return PriceToPay;
         }

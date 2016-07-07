@@ -32,7 +32,7 @@ namespace Clinic
 
 
             var customer1 = new Payments(testDoctor, testPatient, testDiseases.DiseasesName);
-            var payments = new List<Payments>()
+            var payments = new Payments[]
             {
                 new Payments(testDoctor,testPatient,testDiseases.DiseasesName),
                 new Payments(testDoctor,testPatient,testDiseases.DiseasesName ),
@@ -42,7 +42,7 @@ namespace Clinic
             };
             foreach (var item in payments)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.ToString());
             }
         }
     }

@@ -20,7 +20,6 @@ namespace WPFGUI
     /// </summary>
     public partial class PatientGUI : Window
     {
-        public List<Patient> patients = new List<Patient>();
         public PatientGUI()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace WPFGUI
             {
                 try
                 {
-                    patients.Add(new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text));
+                    GUIData.patients.Add(new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;

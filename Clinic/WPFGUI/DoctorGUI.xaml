@@ -13,13 +13,11 @@
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="111,68,0,0"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="111,96,0,0"/>
         <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="111,124,0,0"/>
-        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="111,152,0,0"/>
         <Label x:Name="label1" Content="Middle Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,37,0,0" Width="106"/>
         <Label x:Name="label2" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,65,0,0"/>
         <Label x:Name="label3" Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,93,0,0"/>
         <Label x:Name="label4" Content="Phone Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,121,0,0"/>
-        <Button x:Name="button" Content="New Patient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,191,0,0" Click="button_Click"/>
-        <Label x:Name="label5" Content="PID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,149,0,0"/>
+        <Button x:Name="button" Content="New Doctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,191,0,0" Click="button_Click"/>
         <Button x:Name="button1" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,226,0,0" Click="button1_Click"/>
     </Grid>
 </Window>

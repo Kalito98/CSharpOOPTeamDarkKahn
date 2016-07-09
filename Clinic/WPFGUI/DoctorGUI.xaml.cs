@@ -20,7 +20,6 @@ namespace WPFGUI
     /// </summary>
     public partial class DoctorGUI : Window
     {
-        private List<Doctor> doctors = new List<Doctor>();
         public DoctorGUI()
         {
             InitializeComponent();
@@ -28,19 +27,18 @@ namespace WPFGUI
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Do you want to add this patient?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Do you want to add this doctor?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
                 try
                 {
-                    doctors.Add(new Doctor(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text)));
+                    GUIData.doctors.Add(new Doctor(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text)));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
                     textBox3.Text = string.Empty;
                     textBox4.Text = string.Empty;
-                    textBox5.Text = string.Empty;
-                    MessageBox.Show("Successfully added new patient!");
+                    MessageBox.Show("Successfully added new doctor!");
                 }
                 catch (Exception)
                 {

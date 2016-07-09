@@ -17,13 +17,13 @@
         <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="69,81,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="35"/>
         <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="109,81,0,0" TextWrapping="Wrap" Text="Min" VerticalAlignment="Top" Width="35"/>
         <Label x:Name="label3" Content="Patient" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="69,109,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="69,109,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged" Loaded="comboBox_Loaded" DisplayMemberPath="ContactInfo.FullName"/>
         <Label x:Name="label4" Content="Doctor" HorizontalAlignment="Left" Margin="11,131,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="69,135,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox1_SelectionChanged"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="69,135,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox1_SelectionChanged" Loaded="comboBox1_Loaded" DisplayMemberPath="ContactInfo.FullName"/>
         <Label x:Name="label5" Content="Planned Time" HorizontalAlignment="Left" Margin="11,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.511,1.345"/>
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="98,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label6" Content="Status" HorizontalAlignment="Left" Margin="11,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.397,0.487"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="98,192,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox2_SelectionChanged"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="98,192,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox2_SelectionChanged" Loaded="comboBox2_Loaded"/>
         <Button x:Name="button" Content="New Appointment" HorizontalAlignment="Left" Margin="11,219,0,0" VerticalAlignment="Top" Width="118" Click="button_Click"/>
 
     </Grid>

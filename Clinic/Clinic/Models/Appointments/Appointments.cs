@@ -3,6 +3,7 @@
     using System;
     using System.Globalization;
     using People;
+    using Common;
 
     public class Appointments
     {
@@ -10,65 +11,104 @@
         private DateTime plannedDateAndTime;
         private Patient patient;
         private Doctor doctor;
-        private StatusEnum status;
+        private string status;
         private int plannedTime; //in minutes 
+
+        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status,
+           int plannedTime, string time, string date)
+        {
+            this.AppointmentNumber = appointmentNumber;
+            this.Patient = patient;
+            this.Doctor = doctor;
+            this.Status = status;
+            this.PlannedTime = plannedTime;
+            this.PlannedDateAndTime = FormatDate(date, time);
+        }
 
         public string AppointmentNumber
         {
-            private set { this.appointmentNumber = value; }
-            get { return appointmentNumber; }
+            get
+            {
+                return appointmentNumber;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException(GlobalErrorMessages.InvalidAppointmentNumber);
+                }
+                else
+                {
+                    this.appointmentNumber = value;
+                }
+            }
         }
 
-        public StatusEnum Status
+        public string Status
         {
-            private set { this.status = value; }
-            get { return status; }
+            get
+            {
+                return status;
+            }
+            private set
+            {
+                this.status = value;
+            }
         }
 
         public int PlannedTime
         {
-            private set { this.plannedTime = value; }
-            get { return plannedTime; }
+            get
+            {
+                return plannedTime;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new ArgumentException(GlobalErrorMessages.InvalidPalnnedTime);
+                }
+                else
+                {
+                    this.plannedTime = value;
+                }
+            }
         }
 
         public DateTime PlannedDateAndTime
         {
-            get { return this.plannedDateAndTime; }
+            get
+            {
+                return this.plannedDateAndTime;
+            }
+            set
+            {
+                this.plannedDateAndTime = value;
+            }
         }
 
-        //public Patient Patient
-        //{
-        //    get
-        //    {
-        //        throw new System.NotImplementedException();
-        //    }
-
-        //    set
-        //    {
-        //    }
-        //}
-
-        //public Doctor Doctor
-        //{
-        //    get
-        //    {
-        //        throw new System.NotImplementedException();
-        //    }
-
-        //    set
-        //    {
-        //    }
-        //}
-
-        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, StatusEnum status,
-            int plannedTime, string time, string date)
+        public Patient Patient
         {
-            this.appointmentNumber = appointmentNumber;
-            this.patient = patient;
-            this.doctor = doctor;
-            this.status = status;
-            this.plannedTime = plannedTime;
-            this.plannedDateAndTime = FormatDate(date, time);
+            get
+            {
+                return this.patient;
+            }
+            set
+            {
+                this.patient = value;
+            }
+        }
+
+        public Doctor Doctor
+        {
+            get
+            {
+                return this.doctor;
+            }
+            set
+            {
+                this.doctor = value;
+            }
         }
 
         private DateTime FormatDate(string date, string time)

@@ -21,7 +21,6 @@ namespace WPFGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Patient> patients = new List<Patient>();
 
         public MainWindow()
         {
@@ -44,6 +43,24 @@ namespace WPFGUI
         {
             var appointment = new AppointmentGUI();
             appointment.Show();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            var patientsGet = new PatientGetGUI();
+            patientsGet.Show();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            var doctorGet = new DoctorGetGUI();
+            doctorGet.Show();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            var appointmentsGet = new AppointmentsGetGUI();
+            appointmentsGet.Show();
         }
     }
 }

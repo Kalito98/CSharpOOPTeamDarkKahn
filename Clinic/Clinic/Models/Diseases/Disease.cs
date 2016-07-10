@@ -6,10 +6,10 @@
     {
         private string diseaseCode;
         private string diseasesName;
-        public int treatmentTime;  //in minutes
-        public decimal treatmentPrice;
-        public bool paidByNZOK;
-        public GroupDiseases groupDisease;
+        private int treatmentTime;  //in minutes
+        private decimal treatmentPrice;
+        private bool paidByNZOK;
+        private GroupDiseases groupDisease;
 
 
         public Disease(string diseaseCode, string diseasesName, int treatmentTime, decimal treatmentPrice,
@@ -26,19 +26,31 @@
         public string DiseaseCode
         {
             get { return this.diseaseCode; }
-            private set { this.diseaseCode = value; }
+            private set
+            {
+                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.ObjectCannotBeNull, "Disease code"));
+                this.diseaseCode = value;
+            }
         }
 
         public string DiseasesName
         {
             get { return this.diseasesName; }
-            private set { this.diseasesName = value; }
+            private set
+            {
+                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.ObjectCannotBeNull, "Disease name"));
+                this.diseasesName = value;
+            }
         }
 
         public int TreatmentTime
         {
             get { return this.treatmentTime; }
-            private set { this.treatmentTime = value; }
+            private set
+            {
+                ObjectValidator.CheckIfLessThanZero(value, string.Format(GlobalErrorMessages.NumberLessThanZeroErrorMessage, "Treatment time"));
+                this.treatmentTime = value;
+            }
         }
 
         public decimal TreatmentPrice

@@ -12,7 +12,7 @@
     /// </summary>
     public partial class PatientGetGUI : Window
     {
-        IPatient currentSelection;
+        private IPatient currentSelection;
         public PatientGetGUI()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Clinic.Instance.Patients;//GUIData.patients;
+            comboBox.ItemsSource = Clinic.Instance.Patients;
             comboBox.SelectedIndex = 0;
         }
 

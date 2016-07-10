@@ -10,9 +10,6 @@
             this.ContactInfo = contactInfo;
         }
 
-        public string GetFullContactInfo()
-        {
-            return this.ContactInfo.ToString();
-        }
+        public abstract string GetFullContactInfo();
     }
 }

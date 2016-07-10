@@ -21,8 +21,7 @@
             {
                 try
                 {
-                    //GUIData.doctors.Add(new Doctor(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text)));
-                    Clinic.Instance.AddDoctor(new Doctor(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text)));
+                    Clinic.Instance.AddDoctor(new Doctor(new ContactInfo(textBox.Text.Trim(), textBox1.Text.Trim(), textBox2.Text.Trim(), textBox4.Text.Trim(), textBox3.Text.Trim())));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;

@@ -27,7 +27,7 @@ namespace WPFGUI
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Clinic.Instance.Appointments;//GUIData.appointments;
+            comboBox.ItemsSource = Clinic.Instance.Appointments;
             comboBox.SelectedIndex = 0;
         }
 
@@ -40,7 +40,7 @@ namespace WPFGUI
             textBox2.Text = currentSelection.Patient.ContactInfo.FullName;
             textBox3.Text = currentSelection.Doctor.ContactInfo.FullName;
             textBox4.Text = currentSelection.PlannedTime.ToString();
-            textBox5.Text = currentSelection.Status;
+            textBox5.Text = currentSelection.Status.ToString();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Clinic.Models.Common;
-
+﻿
 namespace WPFGUI
 {
     using System;
@@ -8,11 +7,11 @@ namespace WPFGUI
     using System.Windows.Media;
 
     using Clinic;
+    using Clinic.Models.Common;
     using Clinic.Models.Appointments;
     using Clinic.Models.People;
     using Clinic.Interfaces;
     using Clinic.Validation;
-
 
     /// <summary>
     /// Interaction logic for AppointmentGUI.xaml
@@ -39,8 +38,7 @@ namespace WPFGUI
                     ObjectValidator.CheckIfObjectIsNull(patient, string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Patient"));
                     ObjectValidator.CheckIfObjectIsNull(doctor, string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Doctor"));
 
-                    //GUIData.appointments.Add(new Appointments(textBox.Text, patient, doctor, comboBox2.Text, int.Parse(textBox6.Text), textBox4.Text + ":" + textBox5.Text, textBox3.Text + "." + textBox2.Text + "." + textBox1.Text));
-                    Clinic.Instance.AddAppointment(new Appointments(textBox.Text, patient, doctor, comboBox2.Text, int.Parse(textBox6.Text), textBox4.Text + ":" + textBox5.Text, textBox3.Text + "." + textBox2.Text + "." + textBox1.Text));
+                    Clinic.Instance.AddAppointment(new Appointments(textBox.Text.Trim(), patient, doctor, Appointments.EnumConverter(comboBox2.Text), int.Parse(textBox6.Text.Trim()), textBox4.Text.Trim() + ":" + textBox5.Text.Trim(), textBox3.Text.Trim() + "." + textBox2.Text.Trim() + "." + textBox1.Text.Trim()));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
@@ -60,14 +58,14 @@ namespace WPFGUI
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Clinic.Instance.Patients;//GUIData.patients;
+            comboBox.ItemsSource = Clinic.Instance.Patients;
             comboBox.SelectedIndex = 0;
         }
 
         private void comboBox1_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Clinic.Instance.Doctors;//GUIData.doctors;
+            comboBox.ItemsSource = Clinic.Instance.Doctors;
             comboBox.SelectedIndex = 0;
         }
 
@@ -87,26 +85,19 @@ namespace WPFGUI
 
             ComboBoxItem Canceled = new ComboBoxItem();
             Canceled.Background = Brushes.Red;
-            Canceled.Content = "Canceled";
+            Canceled.Content = "Cancelled";
             comboBox2.Items.Add(Canceled);
 
-           // List<string> enumStatus = new List<string>();
-           // enumStatus.Add("Planned");
-           // enumStatus.Add("Completed");
-           // enumStatus.Add("Canceled");
-           // comboBox.ItemsSource = enumStatus;
             comboBox.SelectedIndex = 0;
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //currentPatient = GUIData.patients[comboBox.SelectedIndex];
             currentPatient = Clinic.Instance.Patients[comboBox.SelectedIndex];
         }
 
         private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //currentDoctor = GUIData.doctors[comboBox1.SelectedIndex];
             currentDoctor = Clinic.Instance.Doctors[comboBox1.SelectedIndex];
 
         }

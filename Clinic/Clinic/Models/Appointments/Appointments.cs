@@ -12,10 +12,10 @@
         private DateTime plannedDateAndTime;
         private IPatient patient;
         private IDoctor doctor;
-        private string status;
+        private StatusEnum status;
         private int plannedTime; //in minutes 
 
-        public Appointments(string appointmentNumber, IPatient patient, IDoctor doctor, string status,
+        public Appointments(string appointmentNumber, IPatient patient, IDoctor doctor, StatusEnum status,
            int plannedTime, string time, string date)
         {
             this.AppointmentNumber = appointmentNumber;
@@ -45,7 +45,7 @@
             }
         }
 
-        public string Status
+        public StatusEnum Status
         {
             get
             {
@@ -129,5 +129,19 @@
             Console.WriteLine("Time: " + plannedTime + " Minutes");
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);
         }
+
+        public static StatusEnum EnumConverter(string input)
+        {
+            switch (input)
+            {
+                case "Cancelled":
+                    return StatusEnum.Canceled;
+                case "Completed":
+                    return StatusEnum.Completed;
+                default:
+                    return StatusEnum.Planned;
+            }
+        }
+
     }
 }

@@ -11,26 +11,17 @@
     public class Patient : Person, IPatient
     {
         private string _egn;
-        private DateTime _dateOfBirth;
-        private ICollection<Disease> _diseases;
 
         public Patient(ContactInfo contactInfo, string egn) : base(contactInfo)
         {
             this.Egn = egn;
             this.DateOfBirth = ExtractDateOfBirthFromEgn(this.Egn);
+            this.Diseases = new List<Disease>();
         }
 
-        public DateTime DateOfBirth
-        {
-            get { return _dateOfBirth; }
-            private set { _dateOfBirth = value; }
-        }
+        public DateTime DateOfBirth { get; }
 
-        public ICollection<Disease> Diseases
-        {
-            get { return _diseases; }
-            private set { _diseases = value; }
-        }
+        public ICollection<Disease> Diseases { get; }
 
         public string Egn
         {
@@ -46,6 +37,11 @@
                     throw new InvalidEgnException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "EGN"));
                 }
             }
+        }
+
+        public override string GetFullContactInfo()
+        {
+            return this.ContactInfo.ToString();
         }
 
         public static DateTime ExtractDateOfBirthFromEgn(string egn)
@@ -70,7 +66,5 @@
             }
             return new DateTime(year, month, day);
         }
-
-
     }
 }

@@ -14,11 +14,11 @@
 
         public ContactInfo(string firstName, string middleName, string lastName, string phoneNumber, string email = null)
         {
-            this.FirstName = firstName.Trim();
-            this.MiddleName = middleName.Trim();
-            this.LastName = lastName.Trim();
-            this.Email = email.Trim();
-            this.PhoneNumber = phoneNumber.Trim();
+            this.FirstName = firstName;
+            this.MiddleName = middleName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.PhoneNumber = phoneNumber;
         }
 
         public string FullName
@@ -31,7 +31,7 @@
             get { return firstName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "First name"));
                 }
@@ -47,7 +47,7 @@
             get { return middleName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Middle name"));
                 }
@@ -63,7 +63,7 @@
             get { return lastName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Last name"));
                 }
@@ -79,13 +79,21 @@
             get { return email; }
             set
             {
-                if (ObjectValidator.CheckIfEmailIsValid(value))
+                if (string.IsNullOrEmpty(value))
                 {
-                    email = value;
+                    this.email = string.Empty;
                 }
                 else
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "e-mail"));
+                    if (ObjectValidator.CheckIfEmailIsValid(value))
+                    {
+                        this.email = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage,
+                            "e-mail"));
+                    }
                 }
             }
         }
@@ -98,12 +106,12 @@
                 if (ObjectValidator.CheckIfPhoneIsValidLandline(value)
                     || ObjectValidator.CheckIfMobilePhoneIsValid(value))
                 {
-                phoneNumber = value;
-
+                    phoneNumber = value;
                 }
                 else
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "phone number"));
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage,
+                        "phone number"));
                 }
             }
         }

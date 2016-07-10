@@ -22,16 +22,10 @@
             set { doctorPatients = value; }
         }
 
-        public Speciality Speciality
+        public Speciality Speciality { get; set; }
+
+        public Doctor(ContactInfo contactInfo, IList<IPatient> doctorPatients) : base(contactInfo)
         {
-            get { throw new System.NotImplementedException(); }
-
-            set { }
-        }
-
-        public Doctor(ContactInfo contactInfo, byte numPatients, IList<IPatient> doctorPatients) : base(contactInfo)
-        {
-
             this.doctorPatients = doctorPatients;
         }
 
@@ -39,12 +33,10 @@
         {
         }
 
-
-        public string GetInfoDoctor()
-        {
-            return this.ContactInfo.ToString();
+        public override string GetFullContactInfo()
+        { 
+            return this.ContactInfo + "\n Speciality: " + this.Speciality.Name;
         }
-
         public bool HasEnoughPatients()
         {
             if (NumPatients >= MaxPatients)
@@ -56,7 +48,7 @@
 
         public void AddNewPatient(IPatient newPatient)
         {
-            doctorPatients.Add(newPatient);
+            this.doctorPatients.Add(newPatient);
         }
     }
 }

@@ -18,7 +18,7 @@
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Clinic.Instance.Doctors;//GUIData.doctors;
+            comboBox.ItemsSource = Clinic.Instance.Doctors;
             comboBox.SelectedIndex = 0;
         }
 

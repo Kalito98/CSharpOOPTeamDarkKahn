@@ -7,7 +7,6 @@
         int NumPatients { get; }
         IList<IPatient> DoctorPatients { get; set; }
         Speciality Speciality { get; }
-        string GetInfoDoctor();
         void AddNewPatient(IPatient patient);
     }
 }

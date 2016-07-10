@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class StringValidators
+    public static class StringValidators
     {
         public static void CheckIfNull(object obj, string message = null)
         {

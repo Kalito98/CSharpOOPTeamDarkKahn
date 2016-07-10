@@ -11,7 +11,9 @@
 - composer2 - Бончо Белутов
 
 ####Project purpose - creating a Clinic Management System.
+The main idea of the system is to track and record patients and doctors and to schedule appointments between them. The system is intended for use in small clinics where usage of shared resources would be impractical due to the costs of obtaining and maintaining a stable IT infrastructure, while having the necessity of only a single front desk. \*cough\* \*cough\*
 
+While the system's functionality can be further extended and the user interface at the moment is intended only for demonstrational purposes, we believe that the core project showcases some of the main principles of object-oriented design.
 
 ###[Repo URL]
 

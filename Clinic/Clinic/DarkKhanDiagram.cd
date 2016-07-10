@@ -102,6 +102,16 @@
   </Class>
   <Class Name="Clinic.Models.Procedures.Procedure" Collapsed="true">
     <Position X="5.75" Y="4.25" Width="1.5" />
+    <AssociationLine Name="doctor" Type="Clinic.Interfaces.IDoctor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.141" Y="0.57" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="patient" Type="Clinic.Interfaces.IPatient">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="0.414" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AEAJAAAAAQAgAAAAIAAAAAQABAAEAAAAAAAAAABAAAA=</HashCode>
       <FileName>Models\Procedures\Procedure.cs</FileName>
@@ -120,6 +130,11 @@
   </Class>
   <Class Name="Clinic.Models.Speciality.Speciality" Collapsed="true">
     <Position X="2.5" Y="3.75" Width="1.5" />
+    <AssociationLine Name="specialityDoctors" Type="Clinic.Interfaces.IDoctor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.206" Y="0.12" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAIACEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Speciality\Speciality.cs</FileName>

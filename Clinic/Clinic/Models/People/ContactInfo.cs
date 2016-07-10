@@ -1,8 +1,9 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using System;
-    using Common;
     using Validation;
+    using Common;
+
     public class ContactInfo
     {
         private string firstName;
@@ -32,7 +33,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(GlobalErrorMessages.FirstNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "First name"));
                 }
                 else
                 {
@@ -48,7 +49,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(GlobalErrorMessages.MiddleNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Middle name"));
                 }
                 else
                 {
@@ -64,7 +65,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(GlobalErrorMessages.LastNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Last name"));
                 }
                 else
                 {
@@ -84,7 +85,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidEmailErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "e-mail"));
                 }
             }
         }
@@ -102,7 +103,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidPhoneErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "phone number"));
                 }
             }
         }

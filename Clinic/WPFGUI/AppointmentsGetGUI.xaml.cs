@@ -1,4 +1,4 @@
-﻿using ConsoleApplication2.Models.Appointments;
+﻿using Clinic.Models.Appointments;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,5 @@
-﻿namespace ConsoleApplication2.Models.Payment
+﻿namespace Clinic.Models.Payment
 {
-    using ConsoleApplication2.Models.Diseases;
-    using Interfaces;
     using System;
     using System.Collections.Generic;
 
@@ -12,7 +10,7 @@
            {
                 {"Cavity", 20.00M},
                 {"WisdomTooth", 42.13M},
-                {"diseases3", 81.00M},
+                {"ToothExtraction", 81.00M},
                 {"diseases4", 55M},
                 {"diseases5", 102M},
                 {"diseases6", 99M},

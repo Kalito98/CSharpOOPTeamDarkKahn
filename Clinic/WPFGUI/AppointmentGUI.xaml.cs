@@ -1,19 +1,9 @@
-﻿using ConsoleApplication2.Models.Appointments;
-using ConsoleApplication2.Models.People;
+﻿using Clinic.Models.Appointments;
+using Clinic.Models.People;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static ConsoleApplication2.Models.Appointments.Appointments;
 
 namespace WPFGUI
 {
@@ -46,9 +36,9 @@ namespace WPFGUI
                     textBox6.Text = string.Empty;
                     MessageBox.Show("Successfully added new appointment!");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Information must be valid!");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

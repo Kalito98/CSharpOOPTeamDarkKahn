@@ -1,4 +1,4 @@
-﻿using ConsoleApplication2.Models.People;
+﻿using Clinic.Models.People;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +40,9 @@ namespace WPFGUI
                     textBox4.Text = string.Empty;
                     MessageBox.Show("Successfully added new doctor!");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Information must be valid!");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using Interfaces;
     public abstract class Person : IContactable

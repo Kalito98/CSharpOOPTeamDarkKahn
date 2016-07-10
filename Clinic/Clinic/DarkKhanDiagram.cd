@@ -56,7 +56,7 @@
       <FileName>Models\People\Patient.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Property Name="Diseases" />
+      <Property Name="Disease" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ConsoleApplication2.Models.People.Person" Collapsed="true">
@@ -84,11 +84,11 @@
       <FileName>Validation\ObjectValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConsoleApplication2.Models.Procedures.Procedures" Collapsed="true">
+  <Class Name="ConsoleApplication2.Models.Procedure.Procedure" Collapsed="true">
     <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAJAAAAAQAgAAAAIAAAAAQABAAEAAAAAAAAAABAAAA=</HashCode>
-      <FileName>Models\Procedures\Procedures.cs</FileName>
+      <FileName>Models\Procedure\Procedure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleApplication2.Models.People.Doctor" Collapsed="true">
@@ -101,11 +101,11 @@
       <Property Name="Speciality" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="ConsoleApplication2.Models.Diseases.Diseases" Collapsed="true">
+  <Class Name="ConsoleApplication2.Models.Disease.Disease" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAACAAAAAAQAAAAEBAAARAAAAEQAAAEA=</HashCode>
-      <FileName>Models\Diseases\Diseases.cs</FileName>
+      <FileName>Models\Disease\Disease.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ConsoleApplication2.Interfaces.IContactable" Collapsed="true">

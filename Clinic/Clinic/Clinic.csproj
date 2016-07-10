@@ -7,8 +7,8 @@
     <ProjectGuid>{9A03B3D3-19D4-4F12-B2B5-56C2C931F854}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication2</RootNamespace>
-    <AssemblyName>ConsoleApplication2</AssemblyName>
+    <RootNamespace>Clinic</RootNamespace>
+    <AssemblyName>Clinic</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\InvalidEgnException.cs" />
+    <Compile Include="Interfaces\IDoctor.cs" />
+    <Compile Include="Interfaces\IPatient.cs" />
     <Compile Include="Interfaces\IPayments.cs" />
     <Compile Include="Models\Appointments\Appointments.cs" />
     <Compile Include="Models\Clinic\Clinic.cs" />
     <Compile Include="Models\Common\GlobalConstants.cs" />
     <Compile Include="Models\Common\GlobalErrorMessages.cs" />
-    <Compile Include="Models\Diseases\Diseases.cs" />
+    <Compile Include="Models\Diseases\Disease.cs" />
     <Compile Include="Models\Diseases\GroupDiseases.cs" />
     <Compile Include="Models\Payment\TreatmentPrices.cs" />
     <Compile Include="Models\People\Patient.cs" />
@@ -56,7 +59,7 @@
     <Compile Include="Models\People\ContactInfo.cs" />
     <Compile Include="Interfaces\IContactable.cs" />
     <Compile Include="Models\People\Person.cs" />
-    <Compile Include="Models\Procedures\Procedures.cs" />
+    <Compile Include="Models\Procedures\Procedure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Speciality\Speciality.cs" />
     <Compile Include="Models\People\Doctor.cs" />
@@ -69,9 +72,7 @@
     <None Include="App.config" />
     <None Include="DarkKhanDiagram.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

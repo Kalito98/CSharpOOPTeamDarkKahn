@@ -1,7 +1,8 @@
-﻿namespace ConsoleApplication2.Models.Diseases
+﻿namespace Clinic.Models.Diseases
 {
-    using System;
-    public class Diseases
+    using Common;
+    using Validation;
+    public class Disease
     {
         private string diseaseCode;
         private string diseasesName;
@@ -9,6 +10,18 @@
         public decimal treatmentPrice;
         public bool paidByNZOK;
         public GroupDiseases groupDisease;
+
+
+        public Disease(string diseaseCode, string diseasesName, int treatmentTime, decimal treatmentPrice,
+           bool paidByNZOK, GroupDiseases groupDisease)
+        {
+            this.DiseaseCode = diseaseCode;
+            this.DiseasesName = diseasesName;
+            this.TreatmentTime = treatmentTime;
+            this.TreatmentPrice = treatmentPrice;
+            this.paidByNZOK = paidByNZOK;
+            this.groupDisease = groupDisease;
+        }
 
         public string DiseaseCode
         {
@@ -33,28 +46,13 @@
             get { return this.treatmentPrice; }
             private set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Invalid Price");
-                }
-                else if (this.paidByNZOK == true)
+                ObjectValidator.CheckIfLessThanZero(value, string.Format(GlobalErrorMessages.NumberLessThanZeroErrorMessage, "Treatment price"));
+                if (this.paidByNZOK)
                 {
                     this.treatmentPrice = 0;
                 }
                 this.treatmentPrice = value;
             }
         }
-
-        public Diseases(string diseaseCode, string diseasesName, int treatmentTime, decimal treatmentPrice,
-           bool paidByNZOK, GroupDiseases groupDisease)
-        {
-            this.diseaseCode = diseaseCode;
-            this.diseasesName = diseasesName;
-            this.treatmentTime = treatmentTime;
-            this.treatmentPrice = treatmentPrice;
-            this.paidByNZOK = paidByNZOK;
-            this.groupDisease = groupDisease;
-        }
-
     }
 }

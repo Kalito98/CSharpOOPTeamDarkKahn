@@ -1,16 +1,17 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using System;
-    using Common;
-    using Validation;
-    using Diseases;
     using System.Collections.Generic;
+    using Validation;
+    using Interfaces;
+    using Diseases;
+    using Common;
 
-    public class Patient : Person
+    public class Patient : Person, IPatient
     {
         private string _pid;
-        private DateTime dateOfBirth;
-        private List<Diseases> _diseases;
+        private DateTime _dateOfBirth;
+        private ICollection<Disease> _diseases;
 
         public Patient(ContactInfo contactInfo, string pid) : base(contactInfo)
         {
@@ -20,11 +21,11 @@
 
         public DateTime DateOfBirth
         {
-            get { return dateOfBirth; }
-            private set { dateOfBirth = value; }
+            get { return _dateOfBirth; }
+            private set { _dateOfBirth = value; }
         }
 
-        public List<Diseases> Diseases
+        public ICollection<Disease> Diseases
         {
             get { return _diseases; }
             private set { _diseases = value; }
@@ -41,12 +42,12 @@
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidEgnErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "EGN"));
                 }
             }
         }
 
-        private static DateTime ExtractDateOfBirthFromEgn(string egn)
+        public static DateTime ExtractDateOfBirthFromEgn(string egn)
         {
             var year = int.Parse(egn.Substring(0, 2));
             var month = int.Parse(egn.Substring(2, 2));

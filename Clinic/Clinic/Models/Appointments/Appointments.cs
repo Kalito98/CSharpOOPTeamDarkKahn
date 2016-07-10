@@ -1,20 +1,21 @@
-﻿namespace ConsoleApplication2.Models.Appointments
+﻿namespace Clinic.Models.Appointments
 {
     using System;
     using System.Globalization;
-    using People;
+
     using Common;
+    using Interfaces;
 
     public class Appointments
     {
         private string appointmentNumber;
         private DateTime plannedDateAndTime;
-        private Patient patient;
-        private Doctor doctor;
+        private IPatient patient;
+        private IDoctor doctor;
         private string status;
         private int plannedTime; //in minutes 
 
-        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status,
+        public Appointments(string appointmentNumber, IPatient patient, IDoctor doctor, string status,
            int plannedTime, string time, string date)
         {
             this.AppointmentNumber = appointmentNumber;
@@ -35,7 +36,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidAppointmentNumber);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "appointment number"));
                 }
                 else
                 {
@@ -66,7 +67,7 @@
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidPalnnedTime);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "planned time"));
                 }
                 else
                 {
@@ -87,7 +88,7 @@
             }
         }
 
-        public Patient Patient
+        public IPatient Patient
         {
             get
             {
@@ -99,7 +100,7 @@
             }
         }
 
-        public Doctor Doctor
+        public IDoctor Doctor
         {
             get
             {

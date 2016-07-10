@@ -1,17 +1,16 @@
-﻿namespace ConsoleApplication2.Validation
+﻿namespace Clinic.Validation
 {
     using System;
     using System.Text.RegularExpressions;
-    using Common;
+    using Models.Common;
 
     public static class ObjectValidator
     {
-
-        public static void CheckIfObjectIsNull(object obj, string errorMessage = GlobalConstants.EmptyString)
+        public static void CheckIfObjectIsNull(object obj, string errorMessage = GlobalErrorMessages.NullObjectErrorMessage)
         {
             if ( obj == null )
             {
-                throw new NullReferenceException(GlobalErrorMessages.NullObjectErrorMessage);
+                throw new NullReferenceException(errorMessage);
             }
         }
 
@@ -42,7 +41,7 @@
                 return false;
             }
             try
-            {   //TODO: Better regex
+            {  
                 //Matches
                 //02 492 72 00, 02 4927200, 066 4927200, 02 256 45 56, +359663565656, 359663565656, +359 66 356 56 56, +3592 356 56 56
                 //Non - Matches - any non-numeric &
@@ -65,8 +64,6 @@
             }
             try
             {
-                //TODO: Better regex
-                //TODO: Find a way to validate international phones
                 //Matches
                 //0888123456, 0987698652, +359-888-859-888, 0888-888888, 0888 888 888, 359 888 888 888, 888-876-888, 0888-876-888, 0878 888 888, 0987888888
                 //Non - Matches - any non-numeric &
@@ -78,6 +75,22 @@
             catch ( RegexMatchTimeoutException )
             {
                 return false;
+            }
+        }
+
+        public static void CheckIfLessThanZero(decimal value, string message = null)
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException(message);
+            }
+        }
+
+        public static void CheckIfDateHasPassed(DateTime date, string message = null)
+        {
+            if (DateTime.Now < date)
+            {
+                throw new ArgumentException(message);
             }
         }
     }

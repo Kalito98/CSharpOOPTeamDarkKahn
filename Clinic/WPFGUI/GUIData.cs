@@ -1,10 +1,6 @@
-﻿using ConsoleApplication2.Models.Appointments;
-using ConsoleApplication2.Models.People;
-using System;
+﻿using Clinic.Models.Appointments;
+using Clinic.Models.People;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WPFGUI
 {

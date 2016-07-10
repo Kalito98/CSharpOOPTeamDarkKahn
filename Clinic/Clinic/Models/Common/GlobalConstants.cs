@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication2.Common
+﻿namespace Clinic.Models.Common
 {
     public static class GlobalConstants
     {

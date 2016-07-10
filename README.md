@@ -10,13 +10,14 @@
 - borislav.bohosyan - Борислав Бохосян
 - composer2 - Бончо Белутов
 
-###Project purpose – what problem do you solve and how?
-###Creating a Clinic Management System.
+####Project purpose - creating a Clinic Management System.
 
-###Class diagram of your types
 
 ###[Repo URL]
 
-###Any other information (optionally)
+###[Class Diagram]
+![Class Diagram](https://raw.githubusercontent.com/J0hnyBG/CSharpOOPTeamDarkKahn/master/ClassDiagram.PNG)
+
 
 [Repo URL]: https://github.com/Kalito98/CSharpOOPTeamDarkKahn/
+[Class Diagram]: https://raw.githubusercontent.com/J0hnyBG/CSharpOOPTeamDarkKahn/master/ClassDiagram.PNG

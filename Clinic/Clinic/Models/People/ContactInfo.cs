@@ -33,7 +33,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "First name"));
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "First name"));
                 }
                 else
                 {
@@ -49,7 +49,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Middle name"));
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Middle name"));
                 }
                 else
                 {
@@ -65,7 +65,7 @@
             {
                 if ( string.IsNullOrEmpty(value) )
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Last name"));
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Last name"));
                 }
                 else
                 {

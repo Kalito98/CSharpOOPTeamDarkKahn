@@ -6,17 +6,18 @@
     using Interfaces;
     using Diseases;
     using Common;
+    using Exceptions;
 
     public class Patient : Person, IPatient
     {
-        private string _pid;
+        private string _egn;
         private DateTime _dateOfBirth;
         private ICollection<Disease> _diseases;
 
-        public Patient(ContactInfo contactInfo, string pid) : base(contactInfo)
+        public Patient(ContactInfo contactInfo, string egn) : base(contactInfo)
         {
-            this.Pid = pid;
-            this.DateOfBirth = ExtractDateOfBirthFromEgn(pid);
+            this.Egn = egn;
+            this.DateOfBirth = ExtractDateOfBirthFromEgn(this.Egn);
         }
 
         public DateTime DateOfBirth
@@ -31,18 +32,18 @@
             private set { _diseases = value; }
         }
 
-        public string Pid
+        public string Egn
         {
-            get { return _pid; }
+            get { return _egn; }
             private set
             {
                 if (EgnValidator.IsEgnValid(value))
                 {
-                    _pid = value;
+                    _egn = value;
                 }
                 else
                 {
-                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "EGN"));
+                    throw new InvalidEgnException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "EGN"));
                 }
             }
         }

@@ -8,6 +8,6 @@
     {
         DateTime DateOfBirth { get; }
         ICollection<Disease> Diseases { get; }
-        string Pid { get; }
+        string Egn { get; }
     }
 }

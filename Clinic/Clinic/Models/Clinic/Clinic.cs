@@ -2,11 +2,35 @@
 {
     using System.Collections.Generic;
     using Interfaces;
-    using Models.Appointments;
-    public class Clinic
+
+    public sealed class Clinic
     {
-        public static ICollection<IDoctor> doctors = new List<IDoctor>();
-        public static ICollection<IPatient> patients = new List<IPatient>();
-        public static ICollection<Appointments> appointments = new List<Appointments>();
+        private Clinic()
+        {
+            this.Doctors = new List<IDoctor>();
+            this.Patients = new List<IPatient>();
+            this.Appointments = new List<IAppointments>();
+        }
+
+        public static Clinic Instance { get; } = new Clinic();
+
+        public IList<IDoctor> Doctors { get; }
+
+        public IList<IPatient> Patients { get; }
+
+        public IList<IAppointments> Appointments { get; }
+
+        public void AddDoctor(IDoctor doc)
+        {
+            this.Doctors.Add(doc);
+        }
+        public void AddPatient(IPatient pac)
+        {
+            this.Patients.Add(pac);
+        }
+        public void AddAppointment(IAppointments app)
+        {
+            this.Appointments.Add(app);
+        }
     }
 }

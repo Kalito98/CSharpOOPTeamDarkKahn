@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\InvalidEgnException.cs" />
+    <Compile Include="Interfaces\IAppointments.cs" />
     <Compile Include="Interfaces\IDoctor.cs" />
     <Compile Include="Interfaces\IPatient.cs" />
     <Compile Include="Interfaces\IPayments.cs" />
     <Compile Include="Models\Appointments\Appointments.cs" />
+    <Compile Include="Models\Appointments\StatusEnum.cs" />
     <Compile Include="Models\Clinic\Clinic.cs" />
     <Compile Include="Models\Common\GlobalConstants.cs" />
     <Compile Include="Models\Common\GlobalErrorMessages.cs" />

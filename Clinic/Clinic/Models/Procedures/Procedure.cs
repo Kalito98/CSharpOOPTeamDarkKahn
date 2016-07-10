@@ -29,7 +29,7 @@
             set
             {
                 StringValidators.CheckIfStringIsNullOrEmpty(value,
-                    string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Procedure"));
+                    string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Procedure"));
                 this.name = value;
             }
         }
@@ -40,8 +40,8 @@
             set
             {
                 StringValidators.CheckIfStringIsNullOrEmpty(value,
-                    string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Description"));
-                this.name = value;
+                    string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Description"));
+                this.description = value;
             }
         }
 

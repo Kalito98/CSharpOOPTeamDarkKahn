@@ -1,8 +1,7 @@
-﻿using Clinic.Models.People;
-
-namespace Clinic.Validation
+﻿namespace Clinic.Validation
 {
-    using System;
+    using Models.People;
+
     public static class EgnValidator
     {
         private static readonly int[] LookUpTable = {2, 4, 8, 5, 10, 9, 7, 3, 6};

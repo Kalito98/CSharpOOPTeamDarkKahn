@@ -6,7 +6,7 @@
     using Common;
     using Interfaces;
 
-    public class Appointments
+    public class Appointments : IAppointments
     {
         private string appointmentNumber;
         private DateTime plannedDateAndTime;
@@ -128,13 +128,6 @@
             Console.WriteLine("Doctor: " + doctor.ContactInfo.FullName);
             Console.WriteLine("Time: " + plannedTime + " Minutes");
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);
-        }
-
-        public enum StatusEnum
-        {
-            Planned = 0,
-            Completed = 1,
-            Canceled = 2
         }
     }
 }

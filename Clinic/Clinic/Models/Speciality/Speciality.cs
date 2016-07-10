@@ -23,7 +23,7 @@
             get { return this.name; }
             set
             {
-                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.StringCannotBeNullOrEmpty, "Speciality name"));
+                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Speciality name"));
                 this.name = value;
             }
         }

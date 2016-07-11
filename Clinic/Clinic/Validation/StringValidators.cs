@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication2.Validation
+﻿namespace Clinic.Validation
 {
-   public class StringValidators
+    using System;
+
+    public static class StringValidators
     {
         public static void CheckIfNull(object obj, string message = null)
         {
@@ -24,7 +20,7 @@ namespace ConsoleApplication2.Validation
             }
         }
 
-        public static void CheckIfStringLengthIsValid(string text, int max, int min = 0, string message = null)
+        public static void CheckIfStringLengthIsValid(string text, int min = 0, int max = int.MaxValue, string message = null)
         {
             if (text.Length < min || max < text.Length)
             {

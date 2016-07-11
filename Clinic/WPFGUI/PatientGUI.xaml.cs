@@ -1,20 +1,9 @@
-﻿using ConsoleApplication2.Models.People;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace WPFGUI
+﻿namespace WPFGUI
 {
+    using System;
+    using System.Windows;
+    using Clinic;
+    using Clinic.Models.People;
     /// <summary>
     /// Interaction logic for Patient.xaml
     /// </summary>
@@ -32,7 +21,7 @@ namespace WPFGUI
             {
                 try
                 {
-                    GUIData.patients.Add(new Patient(new ContactInfo(textBox.Text, textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text), textBox5.Text));
+                    Clinic.Instance.AddPatient(new Patient(new ContactInfo(textBox.Text.Trim(), textBox1.Text.Trim(), textBox2.Text.Trim(), textBox4.Text.Trim(), textBox3.Text.Trim()), textBox5.Text.Trim()));
                     textBox.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
@@ -41,9 +30,9 @@ namespace WPFGUI
                     textBox5.Text = string.Empty;
                     MessageBox.Show("Successfully added new patient!");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Information must be valid!");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

@@ -1,37 +1,31 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using System.Collections.Generic;
     using Speciality;
+    using Interfaces;
     using Common;
 
-    public class Doctor : Person
+    public class Doctor : Person, IDoctor
     {
         const byte MaxPatients = GlobalConstants.MaxPatientsPerDoctor;
 
-        private List<Patient> doctorPatients;
+        private IList<IPatient> doctorPatients;
 
         public int NumPatients
         {
             get { return this.doctorPatients.Count; }
-
         }
 
-        public List<Patient> DoctorPatients
+        public IList<IPatient> DoctorPatients
         {
             get { return doctorPatients; }
             set { doctorPatients = value; }
         }
 
-        public Speciality Speciality
+        public Speciality Speciality { get; set; }
+
+        public Doctor(ContactInfo contactInfo, IList<IPatient> doctorPatients) : base(contactInfo)
         {
-            get { throw new System.NotImplementedException(); }
-
-            set { }
-        }
-
-        public Doctor(ContactInfo contactInfo, byte numPatients, List<Patient> doctorPatients) : base(contactInfo)
-        {
-
             this.doctorPatients = doctorPatients;
         }
 
@@ -39,12 +33,10 @@
         {
         }
 
-
-        public string GetInfoDoctor()
-        {
-            return this.ContactInfo.ToString();
+        public override string GetFullContactInfo()
+        { 
+            return this.ContactInfo + "\n Speciality: " + this.Speciality.Name;
         }
-
         public bool HasEnoughPatients()
         {
             if (NumPatients >= MaxPatients)
@@ -54,9 +46,9 @@
             return true;
         }
 
-        public void AddNewPatient(Patient newPatient)
+        public void AddNewPatient(IPatient newPatient)
         {
-            doctorPatients.Add(newPatient);
+            this.doctorPatients.Add(newPatient);
         }
     }
 }

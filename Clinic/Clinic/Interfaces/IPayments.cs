@@ -1,14 +1,10 @@
-﻿namespace ConsoleApplication2.Interfaces
+﻿namespace Clinic.Interfaces
 {
-    using ConsoleApplication2.Models.Payment;
-    using ConsoleApplication2.Models.People;
-
     public interface IPayments
     {
+        IDoctor Doctor { get;}
 
-        Doctor Doctor { get;}
-
-        Patient Patient { get;}
+        IPatient Patient { get;}
 
         string Diseases { get;}
     }

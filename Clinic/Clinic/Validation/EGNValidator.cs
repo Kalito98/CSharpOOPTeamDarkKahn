@@ -1,6 +1,7 @@
-﻿namespace ConsoleApplication2.Validation
+﻿namespace Clinic.Validation
 {
-    using System;
+    using Models.People;
+
     public static class EgnValidator
     {
         private static readonly int[] LookUpTable = {2, 4, 8, 5, 10, 9, 7, 3, 6};
@@ -14,33 +15,7 @@
             try
             {
                 ulong.Parse(egn);
-            }
-            catch
-            {
-                return false;
-            }
-
-            var year = int.Parse(egn.Substring(0, 2));
-            var month = int.Parse(egn.Substring(2, 2));
-            var day = int.Parse(egn.Substring(4, 2));
-
-            if (month > 40)
-            {
-                month -= 40;
-                year += 2000;
-            }
-            else if (month > 20)
-            {
-                month -= 20;
-                year += 1800;
-            }
-            else
-            {
-                year += 1900;
-            }
-            try
-            {
-                new DateTime(year, month, day);
+                Patient.ExtractDateOfBirthFromEgn(egn);
             }
             catch
             {

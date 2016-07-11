@@ -1,8 +1,9 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using System;
-    using Common;
     using Validation;
+    using Common;
+
     public class ContactInfo
     {
         private string firstName;
@@ -13,11 +14,11 @@
 
         public ContactInfo(string firstName, string middleName, string lastName, string phoneNumber, string email = null)
         {
-            this.FirstName = firstName.Trim();
-            this.MiddleName = middleName.Trim();
-            this.LastName = lastName.Trim();
-            this.Email = email.Trim();
-            this.PhoneNumber = phoneNumber.Trim();
+            this.FirstName = firstName;
+            this.MiddleName = middleName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.PhoneNumber = phoneNumber;
         }
 
         public string FullName
@@ -30,9 +31,9 @@
             get { return firstName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.FirstNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "First name"));
                 }
                 else
                 {
@@ -46,9 +47,9 @@
             get { return middleName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.MiddleNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Middle name"));
                 }
                 else
                 {
@@ -62,9 +63,9 @@
             get { return lastName; }
             set
             {
-                if ( string.IsNullOrEmpty(value) )
+                if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.LastNameEmptyErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Last name"));
                 }
                 else
                 {
@@ -78,13 +79,21 @@
             get { return email; }
             set
             {
-                if (ObjectValidator.CheckIfEmailIsValid(value))
+                if (string.IsNullOrEmpty(value))
                 {
-                    email = value;
+                    this.email = string.Empty;
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidEmailErrorMessage);
+                    if (ObjectValidator.CheckIfEmailIsValid(value))
+                    {
+                        this.email = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage,
+                            "e-mail"));
+                    }
                 }
             }
         }
@@ -97,12 +106,12 @@
                 if (ObjectValidator.CheckIfPhoneIsValidLandline(value)
                     || ObjectValidator.CheckIfMobilePhoneIsValid(value))
                 {
-                phoneNumber = value;
-
+                    phoneNumber = value;
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidPhoneErrorMessage);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage,
+                        "phone number"));
                 }
             }
         }

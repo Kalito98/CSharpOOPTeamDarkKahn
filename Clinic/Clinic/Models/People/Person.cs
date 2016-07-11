@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using Interfaces;
     public abstract class Person : IContactable
@@ -10,9 +10,6 @@
             this.ContactInfo = contactInfo;
         }
 
-        public string GetFullContactInfo()
-        {
-            return this.ContactInfo.ToString();
-        }
+        public abstract string GetFullContactInfo();
     }
 }

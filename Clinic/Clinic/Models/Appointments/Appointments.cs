@@ -1,20 +1,21 @@
-﻿namespace ConsoleApplication2.Models.Appointments
+﻿namespace Clinic.Models.Appointments
 {
     using System;
     using System.Globalization;
-    using People;
-    using Common;
 
-    public class Appointments
+    using Common;
+    using Interfaces;
+
+    public class Appointments : IAppointments
     {
         private string appointmentNumber;
         private DateTime plannedDateAndTime;
-        private Patient patient;
-        private Doctor doctor;
-        private string status;
+        private IPatient patient;
+        private IDoctor doctor;
+        private StatusEnum status;
         private int plannedTime; //in minutes 
 
-        public Appointments(string appointmentNumber, Patient patient, Doctor doctor, string status,
+        public Appointments(string appointmentNumber, IPatient patient, IDoctor doctor, StatusEnum status,
            int plannedTime, string time, string date)
         {
             this.AppointmentNumber = appointmentNumber;
@@ -35,7 +36,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidAppointmentNumber);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "appointment number"));
                 }
                 else
                 {
@@ -44,7 +45,7 @@
             }
         }
 
-        public string Status
+        public StatusEnum Status
         {
             get
             {
@@ -66,7 +67,7 @@
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidPalnnedTime);
+                    throw new ArgumentException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "planned time"));
                 }
                 else
                 {
@@ -87,7 +88,7 @@
             }
         }
 
-        public Patient Patient
+        public IPatient Patient
         {
             get
             {
@@ -99,7 +100,7 @@
             }
         }
 
-        public Doctor Doctor
+        public IDoctor Doctor
         {
             get
             {
@@ -129,11 +130,18 @@
             Console.WriteLine("Appointment planned for: " + plannedDateAndTime);
         }
 
-        public enum StatusEnum
+        public static StatusEnum EnumConverter(string input)
         {
-            Planned = 0,
-            Completed = 1,
-            Canceled = 2
+            switch (input)
+            {
+                case "Cancelled":
+                    return StatusEnum.Canceled;
+                case "Completed":
+                    return StatusEnum.Completed;
+                default:
+                    return StatusEnum.Planned;
+            }
         }
+
     }
 }

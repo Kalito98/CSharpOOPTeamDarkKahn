@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication2.Interfaces
+﻿namespace Clinic.Interfaces
 {
     using Models.People;
 

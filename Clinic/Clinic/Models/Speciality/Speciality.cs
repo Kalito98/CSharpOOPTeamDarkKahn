@@ -1,25 +1,36 @@
-﻿namespace ConsoleApplication2.Models.Speciality
+﻿namespace Clinic.Models.Speciality
 {
     using System.Collections.Generic;
-    using People;
     using Diseases;
-
+    using Interfaces;
+    using Common;
+    using Validation;
     public class Speciality
     {
         private string name;
-        private List<Doctor> specialityDoctors = new List<Doctor>();
-        private List<Diseases> specialityDiseases = new List<Diseases>();
+        private ICollection<IDoctor> specialityDoctors;
+        private ICollection<Disease> specialityDiseases;
 
-        public Speciality(List<Diseases> _speacialityDiseases, string name)
+        public Speciality(string name)
         {
-            _speacialityDiseases = new List<Diseases>();
-            this.specialityDiseases = _speacialityDiseases;
-            this.name = name;
+            this.specialityDiseases = new List<Disease>();
+            this.specialityDoctors = new List<IDoctor>();
+            this.Name = name;
         }
 
-        public void addDoctor(Doctor newSpecialityDoctor)
+        public string Name
         {
-            specialityDoctors.Add(newSpecialityDoctor);
+            get { return this.name; }
+            set
+            {
+                StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.NullObjectErrorMessage, "Speciality name"));
+                this.name = value;
+            }
+        }
+
+        public void AddDoctor(IDoctor newSpecialityDoctor)
+        {
+            this.specialityDoctors.Add(newSpecialityDoctor);
         }
     }
 }

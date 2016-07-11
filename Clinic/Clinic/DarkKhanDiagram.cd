@@ -1,66 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ConsoleApplication2.Models.Appointments.Appointments" Collapsed="true">
-    <Position X="3" Y="3" Width="1.5" />
+  <Class Name="Clinic.Models.Appointments.Appointments" Collapsed="true">
+    <Position X="3.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAaIAAAEAAAAAAAACAAAIAEABAADAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAaIAAAEAAAAAAAACAAAIAEABAADAAQAAAAABAAACAA=</HashCode>
       <FileName>Models\Appointments\Appointments.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Doctor" />
+      <Property Name="Patient" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ConsoleApplication2.Models.Speciality.Speciality" Collapsed="true">
-    <Position X="6.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAIAAIAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Speciality\Speciality.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConsoleApplication2.Common.GlobalConstants" Collapsed="true">
-    <Position X="8.25" Y="2.25" Width="1.5" />
+  <Class Name="Clinic.Models.Common.GlobalConstants" Collapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Common\GlobalConstants.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConsoleApplication2.Common.GlobalErrorMessages" Collapsed="true">
-    <Position X="8.25" Y="3" Width="1.5" />
+  <Class Name="Clinic.Models.Payment.Payments" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAIgAAAAAQwBAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Common\GlobalErrorMessages.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConsoleApplication2.Models.Payment.Payments" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAEAACAAAAEAAAAAAQAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAEAACAAAAAAAAAAAQAAAAAAAAACAA=</HashCode>
       <FileName>Models\Payment\Payments.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Doctor" />
+      <Property Name="Patient" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ConsoleApplication2.Models.Payment.TreatmentPrices" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAgAAAAAAAAAA=</HashCode>
-      <FileName>Models\Payment\TreatmentPrices.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConsoleApplication2.Models.People.ContactInfo" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+  <Class Name="Clinic.Models.People.ContactInfo" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACBAAIAkAAAQQAAAEEAAAAAAAAAACAAAAAg=</HashCode>
       <FileName>Models\People\ContactInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConsoleApplication2.Models.People.Patient" Collapsed="true">
-    <Position X="3" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgACCAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\People\Patient.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Diseases" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="ConsoleApplication2.Models.People.Person" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="Clinic.Models.People.Person" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\People\Person.cs</FileName>
@@ -70,49 +49,139 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ConsoleApplication2.Validation.EGNValidator" Collapsed="true">
-    <Position X="8.25" Y="1.5" Width="1.5" />
+  <Class Name="Clinic.Validation.ObjectValidator" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAACAAAAAAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Validation\EGNValidator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConsoleApplication2.Validation.ObjectValidator" Collapsed="true">
-    <Position X="8.25" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAQAAACAkAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAACAkAAAAAAABAAAgAAAAAA=</HashCode>
       <FileName>Validation\ObjectValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ConsoleApplication2.Models.Procedures.Procedures" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEAJAAAAAQAgAAAAIAAAAAQABAAEAAAAAAAAAABAAAA=</HashCode>
-      <FileName>Models\Procedures\Procedures.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConsoleApplication2.Models.People.Doctor" Collapsed="true">
-    <Position X="5" Y="1.75" Width="1.5" />
+  <Class Name="Clinic.Models.People.Doctor" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAKAAAAAAQAAAAEAAAAAAAAAAAAEAAAAABCAAA=</HashCode>
       <FileName>Models\People\Doctor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Speciality" />
-    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ConsoleApplication2.Models.Diseases.Diseases" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+  <Class Name="Clinic.Models.People.Patient" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAACAAAAAAQAAAAEBAAARAAAAEQAAAEA=</HashCode>
-      <FileName>Models\Diseases\Diseases.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAASCAAAAAAASAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Models\People\Patient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Clinic.Validation.EgnValidator" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAkAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\EGNValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="ConsoleApplication2.Interfaces.IContactable" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+  <Class Name="Clinic.Validation.StringValidators" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Interfaces\IContactable.cs</FileName>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAA=</HashCode>
+      <FileName>Validation\StringValidators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clinic.Models.Common.GlobalErrorMessages" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAADAAA=</HashCode>
+      <FileName>Models\Common\GlobalErrorMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clinic.Models.Diseases.Disease" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACAAAAAAQAAAAEBAAARAAAAEQAAAEA=</HashCode>
+      <FileName>Models\Diseases\Disease.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clinic.Models.Procedures.Procedure" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <AssociationLine Name="doctor" Type="Clinic.Interfaces.IDoctor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.141" Y="0.57" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="patient" Type="Clinic.Interfaces.IPatient">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="0.414" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAJAAAAAQAgAAAAIAAAAAQABAAEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Procedures\Procedure.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="doctor" />
+      <Field Name="patient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Clinic.Models.Payment.TreatmentPrices" Collapsed="true">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Payment\TreatmentPrices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clinic.Models.Speciality.Speciality" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <AssociationLine Name="specialityDoctors" Type="Clinic.Interfaces.IDoctor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.206" Y="0.12" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAIACEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Speciality\Speciality.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="specialityDoctors" />
+      <Field Name="specialityDiseases" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Clinic.Exceptions.InvalidEgnException" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidEgnException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clinic.Clinic" Collapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQECAAAAARggAAAAAAAA=</HashCode>
+      <FileName>Models\Clinic\Clinic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Appointments" />
+      <Property Name="Doctors" />
+      <Property Name="Patients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="Clinic.Interfaces.IDoctor" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAKAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Interfaces\IDoctor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Clinic.Interfaces.IPatient" Collapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAASAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPatient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Clinic.Interfaces.IAppointments" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAAAAAAACAAAAAEAAAAAAAQAAAAABAAACAA=</HashCode>
+      <FileName>Interfaces\IAppointments.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

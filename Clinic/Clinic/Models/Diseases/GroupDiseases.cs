@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication2.Models.Diseases
+﻿namespace Clinic.Models.Diseases
 {
     public enum GroupDiseases
     {

@@ -8,12 +8,12 @@
         Title="PatientGetGUI" Height="300" Width="300">
     <Grid>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,55,0,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,58,0,0"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,86,0,0"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,114,0,0"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,142,0,0"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,170,0,0"/>
-        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,198,0,0"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,58,0,0"  IsReadOnly="True"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,86,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,114,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,142,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,170,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="110,198,0,0" IsReadOnly="True"/>
         <Label x:Name="label1" Content="Middle Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,83,0,0" Width="106"/>
         <Label x:Name="label2" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,111,0,0"/>
         <Label x:Name="label3" Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,139,0,0"/>

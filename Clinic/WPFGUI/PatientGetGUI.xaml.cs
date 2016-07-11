@@ -1,26 +1,18 @@
-﻿using ConsoleApplication2.Models.People;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace WPFGUI
+﻿namespace WPFGUI
 {
+    using System.Windows;
+    using System.Windows.Controls;
+
+    using Clinic;
+    using Clinic.Interfaces;
+    using Clinic.Models.People;
+
     /// <summary>
     /// Interaction logic for PatientGetGUI.xaml
     /// </summary>
     public partial class PatientGetGUI : Window
     {
-        Patient currentSelection;
+        private IPatient currentSelection;
         public PatientGetGUI()
         {
             InitializeComponent();
@@ -29,7 +21,7 @@ namespace WPFGUI
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = GUIData.patients;
+            comboBox.ItemsSource = Clinic.Instance.Patients;
             comboBox.SelectedIndex = 0;
         }
 
@@ -42,7 +34,7 @@ namespace WPFGUI
             textBox2.Text = currentSelection.ContactInfo.LastName;
             textBox3.Text = currentSelection.ContactInfo.Email;
             textBox4.Text = currentSelection.ContactInfo.PhoneNumber;
-            textBox5.Text = currentSelection.Pid;
+            textBox5.Text = currentSelection.Egn;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

@@ -1,52 +1,50 @@
-﻿namespace ConsoleApplication2.Models.People
+﻿namespace Clinic.Models.People
 {
     using System;
-    using Common;
-    using Validation;
-    using Diseases;
     using System.Collections.Generic;
+    using Validation;
+    using Interfaces;
+    using Diseases;
+    using Common;
+    using Exceptions;
 
-    public class Patient : Person
+    public class Patient : Person, IPatient
     {
-        private string _pid;
-        private DateTime dateOfBirth;
-        private List<Diseases> _diseases;
+        private string _egn;
 
-        public Patient(ContactInfo contactInfo, string pid) : base(contactInfo)
+        public Patient(ContactInfo contactInfo, string egn) : base(contactInfo)
         {
-            this.Pid = pid;
-            this.DateOfBirth = ExtractDateOfBirthFromEgn(pid);
+            this.Egn = egn;
+            this.DateOfBirth = ExtractDateOfBirthFromEgn(this.Egn);
+            this.Diseases = new List<Disease>();
         }
 
-        public DateTime DateOfBirth
-        {
-            get { return dateOfBirth; }
-            private set { dateOfBirth = value; }
-        }
+        public DateTime DateOfBirth { get; }
 
-        public List<Diseases> Diseases
-        {
-            get { return _diseases; }
-            private set { _diseases = value; }
-        }
+        public ICollection<Disease> Diseases { get; }
 
-        public string Pid
+        public string Egn
         {
-            get { return _pid; }
+            get { return _egn; }
             private set
             {
                 if (EgnValidator.IsEgnValid(value))
                 {
-                    _pid = value;
+                    _egn = value;
                 }
                 else
                 {
-                    throw new ArgumentException(GlobalErrorMessages.InvalidEgnErrorMessage);
+                    throw new InvalidEgnException(string.Format(GlobalErrorMessages.InvalidStringErrorMessage, "EGN"));
                 }
             }
         }
 
-        private static DateTime ExtractDateOfBirthFromEgn(string egn)
+        public override string GetFullContactInfo()
+        {
+            return this.ContactInfo.ToString();
+        }
+
+        public static DateTime ExtractDateOfBirthFromEgn(string egn)
         {
             var year = int.Parse(egn.Substring(0, 2));
             var month = int.Parse(egn.Substring(2, 2));
@@ -68,7 +66,5 @@
             }
             return new DateTime(year, month, day);
         }
-
-
     }
 }

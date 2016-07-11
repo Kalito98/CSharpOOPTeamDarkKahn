@@ -1,25 +1,23 @@
-﻿namespace ConsoleApplication2.Models.Payment
+﻿namespace Clinic.Models.Payment
 {
     using System.Text;
-    using People;
     using Validation;
-    using Common;
     using Interfaces;
+    using Common;
 
     public class Payments : IPayments
     {
         private string diseases;
-        public Doctor Doctor { get; private set; }
-        public Patient Patient { get; private set; }
 
-
-
-        public Payments(Doctor doctor, Patient patient, string diseases)
+        public Payments(IDoctor doctor, IPatient patient, string diseases)
         {
             this.Doctor = doctor;
             this.Patient = patient;
             this.Diseases = diseases;
         }
+
+        public IDoctor Doctor { get; private set; }
+        public IPatient Patient { get; private set; }
 
         public string Diseases
         {
@@ -27,7 +25,7 @@
             set
             {
                 StringValidators.CheckIfStringIsNullOrEmpty(value, string.Format(GlobalErrorMessages.ObjectCannotBeNull, this.diseases));
-                StringValidators.CheckIfStringLengthIsValid(value, 20, 2, string.Format(GlobalErrorMessages.InvalidStringLength, this.diseases, 2, 20));
+                StringValidators.CheckIfStringLengthIsValid(value, min: 2, max: 20, message: string.Format(GlobalErrorMessages.InvalidStringLength, this.diseases, 2, 20));
                 this.diseases = value;
             }
         }
